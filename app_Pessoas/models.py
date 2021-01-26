@@ -11,20 +11,17 @@ class PessoaManager(models.Manager):
         return self.get_queryset().order_by('nome')
     
     def prof_disc(self):
-        return self.get_queryset().prefetch_related('disciplinaProf').all().order_by('nome')
+        return self.get_queryset().prefetch_related('discProf').all().order_by('nome')
     
     def aluno_disc(self):
-        return self.get_queryset().prefetch_related('disciplinaAluno').all().order_by('nome')
-   
+        return self.get_queryset().prefetch_related('discAluno').all().order_by('nome')
 
-    
 
 class DisciplinaManager(models.Manager):
     
     def disciplina(self):
         return self.get_queryset().order_by('nome')
-    
-    
+
 class Pessoa(models.Model):
     nome = models.CharField(max_length = 100)
 
@@ -45,8 +42,8 @@ class P_aluno(Pessoa):
 
 class Disciplina(models.Model):
     nome = models.CharField(max_length = 30)
-    professor = models.ManyToManyField("Pessoa", related_name="disciplinaProf")
-    aluno = models.ManyToManyField("Pessoa", related_name="disciplinaAluno")
+    professor = models.ManyToManyField("Pessoa", related_name="discProf")
+    aluno = models.ManyToManyField("Pessoa", related_name="discAluno")
 
    
     objects = DisciplinaManager()
