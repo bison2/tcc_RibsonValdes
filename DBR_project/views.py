@@ -69,6 +69,7 @@ def logout_page(request):
     return render(request, "auth/logout.html", context)   
 
 User = get_user_model()
+
 def register_page(request):
     form = RegisterForm(request.POST or None)
     context = {        

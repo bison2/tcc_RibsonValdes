@@ -37,6 +37,7 @@ urlpatterns = [
     path('logout/', logout_page, name='logout'),
     path('register/', register_page, name='register'),
     path('pessoa/', include("app_Pessoas.urls", namespace="pessoa_disc")),
+    path('questions/', include("app_questions.urls", namespace="questions")),
   #  path('search/', include("search.urls", namespace="search")),
  #   path('homepay/', include('payments.urls')),
     path('admin/', admin.site.urls),

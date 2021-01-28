@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row bg-info">
+    <div class="col-sm-10 mx-auto text-center" >
+        <h1>{{ title}} </h1>
+        <h3>{{ content }}</h3>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <input type="submit" value="Enviar" />
+        </form>
+        <h3>   sua respota foi {{resposta}}</h3>
+    </div>
+</div>
+
+{% endblock %}
