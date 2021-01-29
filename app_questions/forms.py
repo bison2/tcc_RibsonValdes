@@ -4,6 +4,7 @@ from django.contrib.auth import get_user_model
 
 
 
+
 escolha_anos = ['2019', '2020', '2021', '1972']
 escolha_cores = [('azul', 'Azul'),
                   ('red', 'Red'),
@@ -28,10 +29,15 @@ class QuestionForm(forms.Form):
         widget=forms.CheckboxSelectMultiple,
             choices=escolha_cores)
 
-    resposta = forms.MultipleChoiceField(
-        widget=forms.SelectMultiple,
-            choices=escolha_respostas)
-
+    resposta = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                    "class": "form-control", 
+                    "placeholder": "digite sua resposta"
+                }
+                )
+    )
+    
 class GabaritoForm(forms.Form):
     gabarito = forms.CharField(
         widget=forms.TextInput(

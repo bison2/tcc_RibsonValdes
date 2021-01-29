@@ -25,10 +25,15 @@ class DisciplinaManager(models.Manager):
 class Pessoa(models.Model):
     nome = models.CharField(max_length = 100)
 
+    objects = PessoaManager()
+    
     def __str__(self):
         return self.nome
     
-    objects = PessoaManager()
+    def get_absolut_url(self):
+        return reverse("pessoa_disc:detalhe", kwargs={'id':self.id})
+
+    
 
 class P_professor(Pessoa):
     cpf = models.CharField(max_length = 11)

@@ -1,6 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Gab
+
+admin.site.register(Gab)
 
 
 
