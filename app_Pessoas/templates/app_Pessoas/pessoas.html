@@ -7,30 +7,43 @@
             <h4>Tabelas de Pessoas(professor e alunos) </h4>
             </div>
 
-            <div class="col-sm-8 mx-auto py-2 text-warning text-center">
-            
-                <table class="table table-hover table-dark table-sm">
+            <div class="col-sm-10  mx-auto py-2  text-center">
+                {% for pessoa in pessoas %}
+                <table class=" table table-responsive table-hover   table-sm  ">
                     <thead>
                         <tr>
-                            <th scope="col">Id</th>
-                            <th scope="col">Pessoas</th>
+                            <th >Id</th>
+                            <th  class="col">Pessoas</th>
+                            <th >detalhe url</th>
+                            <th > get_absolut_url</th>
+                            <th > editar ou deletar </th>
                         </tr>
                     </thead>
                     <tbody>
-                    {% for pessoa in pessoas %}
+                    
                     <tr>
-                        <td> {{pessoa.id}}</td>
-                        <td> {{pessoa.nome}}</td>
-                    </tr>
-                    {% endfor %}
+                        <td > {{pessoa.id}}</td>
+                        <td class="col"> {{pessoa.nome}}</td>
+                        <td >
+                            <a href="{% url 'pessoa_disc:detalhe' id=pessoa.id %}"><button class="btn btn-primary mx-auto my-2 ">detalhe url</button></a>
+                        </td>
+                        <td > 
+                            <a href="{{ pessoa.get_absolut_url }}"><button class="btn btn-success mx-auto my-2 "> get_absolut_url</button></a>
+                        </td>
+                        <td > 
+                            <a href="{{ pessoa.get_absolut_url }}"><button class="btn btn-success mx-auto my-2 "> delete ou edit</button></a>
+                        </td>
+                                     
+                    </tr>        
                     </tbody>
+                            
+                    
                 </table>
+                {% endfor %}
             </div> 
         </div>   
         
         <a href="{% url 'home' %}"><button class="btn btn-primary">Home</button></a>
-        <a href="{% url 'register' %}"><button class="btn btn-primary mx-auto my-2">detalhe de pessoa usando url</button></a>        
-
         
         <hr>
 
