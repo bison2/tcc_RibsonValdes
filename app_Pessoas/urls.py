@@ -1,6 +1,6 @@
 from django.urls import path, include 
 from django.conf.urls import url
-from .views import home_pessoa, pessoa_detail, pessoa_id, PessoaDetailView
+from .views import home_pessoa, pessoa_id
 
 app_name= 'pessoa_disc'
 urlpatterns =[

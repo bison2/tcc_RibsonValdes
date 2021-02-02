@@ -1,7 +1,24 @@
 from django import forms
 from django.contrib.auth import get_user_model
+from .models import Gab
 
+class GabForm(forms.ModelForm):
 
+    class Meta:
+        model = Gab 
+        fields =[
+            'pergunta',
+            'resposta'
+            ]
+        
+       # gabarito = forms.CharField(
+        #3widget=forms.TextInput(
+         #  attrs={
+          #          "class": "form-control", 
+           #         "placeholder": "digite o gabarito"
+            #    }
+            #)
+        #)
 
 
 
@@ -38,7 +55,6 @@ class QuestionForm(forms.Form):
                 )
     )
     
-class GabaritoForm(forms.Form):
     gabarito = forms.CharField(
         widget=forms.TextInput(
             attrs={
@@ -47,6 +63,8 @@ class GabaritoForm(forms.Form):
                 }
             )
         )
+        
+
              
     
     

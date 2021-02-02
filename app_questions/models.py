@@ -8,6 +8,8 @@ class GabManager(models.Manager):
         qs=Gab.objects.all()
 
 class Gab(models.Model):
+    pergunta = models.CharField(max_length =100)
+    resposta = models.CharField(max_length =100)
     gabarito= models.CharField(max_length = 20)
 
     

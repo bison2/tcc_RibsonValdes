@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="row bg-success">
+<div class="row bg-warning">
     <div class="col-sm-10 mx-auto text-center" >
         <h1>{{ title}} </h1>
         <h3>{{ content }}</h3>
@@ -11,9 +11,9 @@
 
             <input type="submit" value="Enviar" />
         </form>
-        <h3>   o gabarito é {{gabarito}}</h3>
-        <h3>   a resposta é {{ resposta}}</h3>
-        <a href="{% url 'home' %}"><button class="btn btn-primary">Home</button></a>
+        
+        <h3>    {{ msg }}</h3>
+        <a href="{% url 'home' %}"><button class="btn btn-primary py-3">Home</button></a>
     </div>
 </div>
 

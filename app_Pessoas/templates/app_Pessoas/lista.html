@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-
 {% block content %}
     <div class="container">
         <div class="row mx-auto bg-warning py-2">
@@ -13,8 +12,11 @@
                     <thead>
                         <tr>
                             <th >Id</th>
+
                             <th  class="col">Pessoas</th>
+
                             <th >detalhe url</th>
+                                         
                             <th > get_absolut_url</th>
                             <th > editar ou deletar </th>
                         </tr>
@@ -22,8 +24,13 @@
                     <tbody>
                     
                     <tr>
+                        
                         <td > {{pessoa.id}}</td>
+
                         <td class="col"> {{pessoa.nome}}</td>
+
+                        
+                        
                         <td >
                             <a href="{% url 'pessoa_disc:detalhe' id=pessoa.id %}"><button class="btn btn-primary mx-auto my-2 ">detalhe url</button></a>
                         </td>
