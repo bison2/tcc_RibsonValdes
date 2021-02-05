@@ -11,6 +11,6 @@ urlpatterns =[
    
     path('', views.question, name='question'),
     path('resposta/', views.gabarito, name='resposta'),
-    path('confere/', views.confere, name='confere'),
+    path('confere/<gabarito>/<resposta>/<msg>/', views.confere, name='confere'),
     #url(r'^confere$', views.confere, name='confere'),
 ]

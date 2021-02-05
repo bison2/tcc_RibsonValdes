@@ -12,8 +12,19 @@
             <input type="submit" value="Enviar" />
         </form>
         
-        <h3>    {{ msg }}</h3>
+        <h3>    {{ user }}</h3>
+        <h3>    {{ gab }}</h3>
+        <h3>    {{ resposta }}</h3>
+        <h3> {{ user }},   {{ msg }}</h3>
+        <h3>    {{ gabarito }}</h3>
+        <a href="{% url 'questions:confere' gabarito resposta msg %}"><button class="btn btn-primary py-3">confere ?</button></a>
+        
+        <a href="{% url 'questions:question'  %}"><button class="btn btn-primary py-3">nova ?</button></a>
+        
+        
         <a href="{% url 'home' %}"><button class="btn btn-primary py-3">Home</button></a>
+        
+        
     </div>
 </div>
 

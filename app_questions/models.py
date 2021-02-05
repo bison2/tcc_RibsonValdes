@@ -12,10 +12,11 @@ class Gab(models.Model):
     resposta = models.CharField(max_length =100)
     gabarito= models.CharField(max_length = 20)
 
-    
+    #objects = GabManager()
+
     def __str__(self):
         return self.gabarito
 
     def get_absolute_url(self):
         # return "/products/{slug}/".format(slug = self.slug)
-       return reverse("questions:confere", kwargs={"gabarito": self.gabarito})
+       return reverse("questions:resposta", kwargs={"id": self.id})
