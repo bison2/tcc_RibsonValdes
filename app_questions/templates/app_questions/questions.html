@@ -6,20 +6,20 @@
     <div class="col-sm-10 mx-auto text-center" >
        
 
-        <form method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-
-            <input type="submit" value="Enviar" />
-        </form>
-        <h3>   sua respota foi {{resposta}}</h3>
+        {% for x in gab %}
+        <h5> (Questão-{{ x.id }}) a pergunta é {{ x.pergunta }}. gabarito:{{ x.gabarito }}</h5>
         
-        <h4>O gabarito é {{gabarito}}</h4>
-        <h3>    {{ msg }}</h3>
         
-        <a href="{% url 'questions:confere' gabarito resposta msg %}"><button class="btn btn-primary mx-auto my-2">confere ?</button></a>
+        
+        <h5>    {{ user }}</h5>
+                  
+        
+        
         <a href="{% url 'home' %}"><button class="btn btn-primary py-3">Home</button></a>
-        <a href="{% url 'questions:resposta' %}"><button class="btn btn-primary py-3">V ou F</button></a>
+        <a href="{% url 'questions:resposta' id=x.id %}"><button class="btn btn-primary py-3">responder</button></a>
+        {% endfor %}
+        
+        
     </div>
 </div>
 

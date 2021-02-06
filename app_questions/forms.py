@@ -7,7 +7,7 @@ class GabForm(forms.ModelForm):
     class Meta:
         model = Gab 
         fields =[
-            'pergunta',
+            #'pergunta',
             'resposta'
             ]
         
