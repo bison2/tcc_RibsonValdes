@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="row bg-warning">
+    <div class="col-sm-10 mx-auto text-center" >
+       
+
+       
+        <h5>    {{ title }}</h5>
+        <h5>    {{ content }}</h5>
+        <form action="{% url 'questions:question22' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <input type="submit" value="Enviar" />
+        </form>
+        
+        
+        <h5>    {{ resposta }}</h5>
+        <h5>    {{ gabarito }}</h5>
+        <h5>    {{ msg }}</h5>
+        
+        
+        <a href="{% url 'home' %}"><button class="btn btn-primary py-3">Home</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+{% endblock %}

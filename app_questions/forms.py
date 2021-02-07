@@ -7,8 +7,10 @@ class GabForm(forms.ModelForm):
     class Meta:
         model = Gab 
         fields =[
-            #'pergunta',
-            'resposta'
+                'alternativa',
+                'resposta',
+                'alternativa2',
+                                
             ]
         
        # gabarito = forms.CharField(
@@ -29,6 +31,8 @@ escolha_cores = [('azul', 'Azul'),
                 ]
 escolha_respostas = [('verdadeiro','Verdadeiro'),
                      ('falso', 'Falso'),
+                     ('25', '25'),
+                     ('30%', '30%'),
                     ]
 class QuestionForm(forms.Form):
     question = forms.CharField(
@@ -46,14 +50,12 @@ class QuestionForm(forms.Form):
         widget=forms.CheckboxSelectMultiple,
             choices=escolha_cores)
 
-    resposta = forms.CharField(
-        widget=forms.TextInput(
-            attrs={
-                    "class": "form-control", 
-                    "placeholder": "digite sua resposta"
-                }
-                )
-    )
+    resposta = forms.MultipleChoiceField(
+        widget=forms.RadioSelect,
+        choices=escolha_respostas)
+    
+    
+    
     
     gabarito = forms.CharField(
         widget=forms.TextInput(
