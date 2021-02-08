@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth import get_user_model
 from .models import Gab
+from django.forms.widgets import RadioSelect
 
 class GabForm(forms.ModelForm):
 
@@ -10,9 +11,10 @@ class GabForm(forms.ModelForm):
                 'alternativa',
                 'resposta',
                 'alternativa2',
-                                
-            ]
-        
+        ]
+        widgets = { 
+           'alternativa2':RadioSelect
+        }       
        # gabarito = forms.CharField(
         #3widget=forms.TextInput(
          #  attrs={

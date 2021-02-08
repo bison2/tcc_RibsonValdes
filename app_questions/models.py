@@ -26,12 +26,12 @@ class Gab(models.Model):
     CNH='CNH'
 
     TIPO_CHOICESII=(
-        (CPF,'CPF'),
-        (RG,'RG'),
-        (CNH,'CNH'),
+        (CPF,'cpf'),
+        (RG,'rg'),
+        (CNH,'cnh'),
     )
     alternativa = models.IntegerField(choices=TIPO_CHOICES, default=1)
-    alternativa2 = models.CharField(max_length=20,choices=TIPO_CHOICESII, default='RG')
+    alternativa2 = models.CharField(max_length=20, choices=TIPO_CHOICESII, default='RG')
     pergunta = models.CharField(max_length =100)
     resposta = models.CharField(max_length =100)
     gabarito= models.CharField(max_length = 20)

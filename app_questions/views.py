@@ -38,18 +38,18 @@ def question(request):
         resposta = str(form.cleaned_data["resposta"]).upper()
         alternativa = str(form.cleaned_data["alternativa"]).upper()
                
-    msg=''
-    
-    if resposta == gabarito: 
-        msg='parabens.Vc acertou :-)'
+    #msg=''
+    #
+    #if resposta == gabarito: 
+     #   msg='parabens.Vc acertou :-)'
         #return render(request,'app_questions/questions.html',{'msg':msg})
-    else:
-        msg='não desista.Tente de novo :-|  '       
+    #else:
+     #   msg='não desista.Tente de novo :-|  '       
         #return render(request,'app_questions/questions.html',{'msg':msg})
     print(request.user)
     print(type(resposta), resposta)
-    print(type(gabarito), gabarito)    
-    print(msg)
+    #print(type(gabarito), gabarito)    
+    #print(msg)
     print(type(alternativa), alternativa)
     context = {
               "title": "Form Page",
@@ -57,8 +57,8 @@ def question(request):
               "form": form,
               "alternativa":alternativa,
               "resposta":resposta,
-              "gabarito":gabarito,
-              "msg":msg,
+     #         "gabarito":gabarito,
+      #        "msg":msg,
               "gab":gab
                 }
     return render(request, 'app_questions/questions.html', context )
@@ -108,11 +108,12 @@ def gabarito(request, id):
         
     msg=''
     
-    if resposta == gabarito: 
+    #if resposta == gabarito: 
+    if alternativa2 == gabarito: 
         msg='parabens.Vc acertou :-)'
         context={
             'msg':msg ,
-            "resposta":resposta,
+            "resposta":alternativa2,
             "gabarito":gabarito,
             "gab":gab,
             "user":user,
@@ -127,7 +128,7 @@ def gabarito(request, id):
     else:
         msg='não desista.Tente de novo :-|'       
         context={
-            "resposta":resposta,
+            "resposta":alternativa2,
             "gabarito":gabarito,
             'msg':msg,
             "gab":gab,
@@ -153,7 +154,7 @@ def gabarito(request, id):
                     "title": "resposta Page",
                     "content": "Formulário ",
                     "form": form,
-                    "resposta":resposta,
+                    "resposta":alternativa2,
                     "gabarito":gabarito,
                     "msg":msg,
                     "gab":gab,
