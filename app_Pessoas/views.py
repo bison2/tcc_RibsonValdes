@@ -3,6 +3,7 @@ from django.http import Http404
 from django.views.generic import ListView, DetailView
 from .models import Pessoa, Disciplina , P_professor, P_aluno
 from django.contrib.auth.models import User
+
 # Create your views here.
 
 def home_pessoa(request):

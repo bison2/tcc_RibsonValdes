@@ -28,6 +28,7 @@ def question(request):
     user=request.user
     
     alternativa='?alternativa?'
+    alternativa2='?alternativa2?'
     resposta ='?resposta?'
     #gabarito= str(gab.first()).lower()
 
@@ -37,6 +38,7 @@ def question(request):
     if form.is_valid():
         resposta = str(form.cleaned_data["resposta"]).upper()
         alternativa = str(form.cleaned_data["alternativa"]).upper()
+        alternativa2 = str(form.cleaned_data["alternativa2"]).upper()
                
     #msg=''
     #
@@ -48,15 +50,19 @@ def question(request):
         #return render(request,'app_questions/questions.html',{'msg':msg})
     print(request.user)
     print(type(resposta), resposta)
+    
     #print(type(gabarito), gabarito)    
     #print(msg)
     print(type(alternativa), alternativa)
+    print(type(alternativa2), alternativa2)
     context = {
               "title": "Form Page",
               "content": "Formulário ",
               "form": form,
               "alternativa":alternativa,
+              "alternativa2":alternativa2,
               "resposta":resposta,
+    
      #         "gabarito":gabarito,
       #        "msg":msg,
               "gab":gab
@@ -75,6 +81,7 @@ def gabarito(request, id):
         print(x.id, x.gabarito)
         gabarito= str(x.gabarito).upper()
         pergunta= x.pergunta.upper()
+        
             #gabarito = Gab.objects.get(gabarito='gabarito')
     
     #for dado in gab:
@@ -90,7 +97,7 @@ def gabarito(request, id):
     resposta ='?'
     alternativa2='?alt2?'
     #gabarito= str(gab.first()).lower()
-
+    
 
     form = GabForm(request.POST or None)
    # gabarito=' ?'
@@ -107,13 +114,13 @@ def gabarito(request, id):
         alternativa2 = form.cleaned_data["alternativa2"]
         
     msg=''
-    
+        
     #if resposta == gabarito: 
-    if alternativa2 == gabarito: 
+    if resposta == gabarito: 
         msg='parabens.Vc acertou :-)'
         context={
             'msg':msg ,
-            "resposta":alternativa2,
+            "resposta":resposta,
             "gabarito":gabarito,
             "gab":gab,
             "user":user,
@@ -128,21 +135,22 @@ def gabarito(request, id):
     else:
         msg='não desista.Tente de novo :-|'       
         context={
-            "resposta":alternativa2,
-            "gabarito":gabarito,
-            'msg':msg,
-            "gab":gab,
-            "user":user,
-            "campos":campos_gab
-      #      "num":num,
-       #     "per":per
-        }
+                "resposta":resposta,
+                "gabarito":gabarito,
+                'msg':msg,
+                "gab":gab,
+                "user":user,
+                "campos":campos_gab
+        #      "num":num,
+        #     "per":per
+            }
        # return confere(request, resposta, gabarito, msg)
         #return render(request, 'app_questions/confere.html', context )
   #      return HttpResponseRedirect(reverse('questions:confere', args=[msg]))
         #return redirect('questions:confere', resposta, gabarito, msg)
     
     print(type(pergunta),pergunta)
+    
     print(type(gabarito),gabarito)
     print(request.user)
     print(type(resposta), resposta)    
@@ -154,12 +162,13 @@ def gabarito(request, id):
                     "title": "resposta Page",
                     "content": "Formulário ",
                     "form": form,
-                    "resposta":alternativa2,
+                    "resposta":resposta,
                     "gabarito":gabarito,
                     "msg":msg,
                     "gab":gab,
                     "user":user,
-                    "campos":campos_gab
+                    "campos":campos_gab,
+    
                     #"num":num,
                     #"per":per
               
@@ -170,7 +179,7 @@ def gabarito(request, id):
     
 
 def confere(request, gabarito, resposta, msg):
-    #gab = Gab.objects.all()
+    #gab = Gab.objectss.all()
     
     #gabarito= str(gab.first()).lower()      
     
@@ -191,51 +200,54 @@ def confere(request, gabarito, resposta, msg):
 def radio(request):
     
     msg='???'
-    resposta=''
-    gabarito=''
+    resposta='??'
+    gabarito='?'
+    context={'context':msg}
     
     if request.method == 'POST':
         form = QuestionForm(request.POST or None)
         if form.is_valid():
-            form.save()
             print(form.cleaned_data)
-            form.cleaned_data
-            resposta = form.cleaned_data["resposta"].upper()
-            gabarito = form.cleaned_data["gabarito"].upper()
-            if resposta == gabarito: 
-                msg='parabens.Vc acertou :-)'
-                #return render(request,'app_questions/questions.html',{'msg':msg})
-                context = {
-                    "title": "Form Page",
-                    "content": "Formulário ",
-                    "form":form,
-                    # "form_gab": form_gab,
-                    "resposta":resposta,
-                    "gabarito":gabarito,
-                    "msg":msg,
-                    #"gab":gab
-                        }
-            else:
-                msg='não desista.Tente de novo :-|  '       
-                #return render(request,'app_questions/questions.html',{'msg':msg})
-                context = {
-                    "title": "Form Page",
-                    "content": "Formulário ",
-                    "form":form,
-                    # "form_gab": form_gab,
-                    "resposta":resposta,
-                    "gabarito":gabarito,
-                    "msg":msg,
-                    #"gab":gab
-                        }
-            print(type(resposta), resposta)
-            print(type(gabarito), gabarito)    
-            print(msg)
-
-
+        resposta = str(form.cleaned_data["question"]).lower()
+        gabarito = form.cleaned_data["gabarito"].lower()
+        #    form.cleaned_data
+        print(form.cleaned_data)
+            
+        if resposta == gabarito: 
+            msg='parabens.Vc acertou :-)'
+                    #return render(request,'app_questions/questions.html',{'msg':msg})
+            context = {
+                        "title": "Form Page",
+                        "content": "Formulário ",
+                        "form":form,
+                        # "form_gab": form_gab,
+                        "resposta":resposta,
+                        "gabarito":gabarito,
+                        "msg":msg,
+                        #"gab":gab
+                            }
         else:
-            print('não captura os dados do formulario')    
-    
+            msg='não desista.Tente de novo :-|  '       
+                    #return render(request,'app_questions/questions.html',{'msg':msg})
+            context = {
+                        "title": "Form Page",
+                        "content": "Formulário ",
+                        "form":form,
+                        # "form_gab": form_gab,
+                        "resposta":resposta,
+                        "gabarito":gabarito,
+                        "msg":msg,
+                        #"gab":gab
+                            }
+        print(type(resposta), resposta)
+        print(type(gabarito), gabarito)    
+        print(msg)
+
+        return render(request, 'app_questions/question22.html', context )
+            
+    #        print('não captura os dados do formulario')    
+    else:
+        form=QuestionForm()
         context = {
                 "title": "Form Page",
                 "content": "Formulário ",
@@ -246,5 +258,5 @@ def radio(request):
                 "msg":msg,
                 #"gab":gab
                     }
-        return render(request, 'app_questions/question22.html', context )
+    return render(request, 'app_questions/question22.html', context )
         

@@ -30,9 +30,21 @@ class Gab(models.Model):
         (RG,'rg'),
         (CNH,'cnh'),
     )
+
+    VF='VF'
+    SEL='S'
+    RAD='R'
+    TIPO_CHOICES3=(
+        (VF,'v ou f'),
+        (SEL,'select'),
+        (RAD,'radio'),
+    )
+
+   
+    pergunta = models.CharField(max_length =100)
     alternativa = models.IntegerField(choices=TIPO_CHOICES, default=1)
     alternativa2 = models.CharField(max_length=20, choices=TIPO_CHOICESII, default='RG')
-    pergunta = models.CharField(max_length =100)
+    
     resposta = models.CharField(max_length =100)
     gabarito= models.CharField(max_length = 20)
    

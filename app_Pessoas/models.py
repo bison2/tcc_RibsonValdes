@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 from django.db.models import CASCADE
 from django.http import Http404
 
+
+
 # Create your models here.
 #ManyToMany simples
 

@@ -7,9 +7,10 @@
        
 
         {% for x in gab %}
-        <h5> (Questão-{{ x.id }}) a pergunta é {{ x.pergunta }}. gabarito:{{ x.gabarito }}</h5>
+        <h5> (Questão-{{ x.id }}), tipo:{{ x.tipo }}. A pergunta é {{ x.pergunta }}. gabarito:{{ x.gabarito }}</h5>
         <h5>{{ alternativa }}</h5>
         <h5>{{ alternativa2 }}</h5>
+        <h5>{{ resposta }}</h5>
         
         
         <h5>    {{ user }}</h5>

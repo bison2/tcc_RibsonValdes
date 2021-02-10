@@ -11,6 +11,7 @@ class GabForm(forms.ModelForm):
                 'alternativa',
                 'resposta',
                 'alternativa2',
+                
         ]
         widgets = { 
            'alternativa2':RadioSelect
