@@ -204,19 +204,19 @@ def radio(request):
     gabarito='?'
     context={'context':msg}
     
-    if request.method == 'POST':
-        form = QuestionForm(request.POST or None)
-        if form.is_valid():
+#    if request.method == 'POST':
+    form = QuestionForm(request.POST or None)
+    if form.is_valid():
             print(form.cleaned_data)
-        resposta = str(form.cleaned_data["question"]).lower()
-        gabarito = form.cleaned_data["gabarito"].lower()
+    resposta = form.cleaned_data["resposta22"].lower()
+    gabarito = form.cleaned_data["gabarito"].lower()
         #    form.cleaned_data
-        print(form.cleaned_data)
+    print(form.cleaned_data)
             
-        if resposta == gabarito: 
-            msg='parabens.Vc acertou :-)'
+    if resposta == gabarito: 
+        msg='parabens.Vc acertou :-)'
                     #return render(request,'app_questions/questions.html',{'msg':msg})
-            context = {
+        context = {
                         "title": "Form Page",
                         "content": "Formulário ",
                         "form":form,
@@ -226,10 +226,10 @@ def radio(request):
                         "msg":msg,
                         #"gab":gab
                             }
-        else:
-            msg='não desista.Tente de novo :-|  '       
+    else:
+        msg='não desista.Tente de novo :-|  '       
                     #return render(request,'app_questions/questions.html',{'msg':msg})
-            context = {
+        context = {
                         "title": "Form Page",
                         "content": "Formulário ",
                         "form":form,
@@ -239,24 +239,11 @@ def radio(request):
                         "msg":msg,
                         #"gab":gab
                             }
-        print(type(resposta), resposta)
-        print(type(gabarito), gabarito)    
-        print(msg)
+    print(type(resposta), resposta)
+    print(type(gabarito), gabarito)    
+    print(msg)
 
-        return render(request, 'app_questions/question22.html', context )
+    return render(request, 'app_questions/question22.html', context )
             
     #        print('não captura os dados do formulario')    
-    else:
-        form=QuestionForm()
-        context = {
-                "title": "Form Page",
-                "content": "Formulário ",
-                "form":form,
-                # "form_gab": form_gab,
-                "resposta":resposta,
-                "gabarito":gabarito,
-                "msg":msg,
-                #"gab":gab
-                    }
-    return render(request, 'app_questions/question22.html', context )
         

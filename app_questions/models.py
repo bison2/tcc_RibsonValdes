@@ -31,13 +31,13 @@ class Gab(models.Model):
         (CNH,'cnh'),
     )
 
-    VF='VF'
-    SEL='S'
-    RAD='R'
+    V='V'
+    F='F'
+    
     TIPO_CHOICES3=(
-        (VF,'v ou f'),
-        (SEL,'select'),
-        (RAD,'radio'),
+        (V,'Verdadeiro'),
+        (F,'Falso'),
+        
     )
 
    
@@ -45,7 +45,7 @@ class Gab(models.Model):
     alternativa = models.IntegerField(choices=TIPO_CHOICES, default=1)
     alternativa2 = models.CharField(max_length=20, choices=TIPO_CHOICESII, default='RG')
     
-    resposta = models.CharField(max_length =100)
+    resposta = models.CharField(max_length =10, choices=TIPO_CHOICES3, default='V')
     gabarito= models.CharField(max_length = 20)
    
 

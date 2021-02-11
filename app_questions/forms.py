@@ -14,7 +14,9 @@ class GabForm(forms.ModelForm):
                 
         ]
         widgets = { 
-           'alternativa2':RadioSelect
+           'alternativa2':RadioSelect,
+           'resposta':RadioSelect
+         
         }       
        # gabarito = forms.CharField(
         #3widget=forms.TextInput(
@@ -34,8 +36,7 @@ escolha_cores = [('azul', 'Azul'),
                 ]
 escolha_respostas = [('verdadeiro','Verdadeiro'),
                      ('falso', 'Falso'),
-                     ('25', '25'),
-                     ('30%', '30%'),
+                     
                     ]
 class QuestionForm(forms.Form):
     question = forms.CharField(
@@ -49,17 +50,15 @@ class QuestionForm(forms.Form):
     data = forms.DateField(
         widget=forms.SelectDateWidget( years=escolha_anos)
         )
+    
+    resposta22 = forms.ChoiceField(
+        widget=forms.RadioSelect,
+        choices=escolha_respostas)
+
     cores = forms.MultipleChoiceField(
         widget=forms.CheckboxSelectMultiple,
             choices=escolha_cores)
 
-    resposta = forms.MultipleChoiceField(
-        widget=forms.RadioSelect,
-        choices=escolha_respostas)
-    
-    
-    
-    
     gabarito = forms.CharField(
         widget=forms.TextInput(
             attrs={
