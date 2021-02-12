@@ -8,13 +8,13 @@ class GabForm(forms.ModelForm):
     class Meta:
         model = Gab 
         fields =[
-                'alternativa',
+            #    'alternativa',
                 'resposta',
-                'alternativa2',
+            #    'alternativa2',
                 
         ]
         widgets = { 
-           'alternativa2':RadioSelect,
+        #   'alternativa2':RadioSelect,
            'resposta':RadioSelect
          
         }       

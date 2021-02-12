@@ -5,22 +5,23 @@
 <div class="row bg-warning">
     <div class="col-sm-10 mx-auto text-center" >
        
-
+        <h5> Bem vindo,  {{ user }}</h5>
         {% for x in gab %}
-        <h5> (Questão-{{ x.id }}), tipo:{{ x.tipo }}. A pergunta é {{ x.pergunta }}. gabarito:{{ x.gabarito }}</h5>
+        <h5> (Questão-{{ x.id }}) A pergunta é {{ x.pergunta }}. </h5>
+       
+        <!--
+         <h5>{{ resposta }}</h5>
         <h5>{{ alternativa }}</h5>
         <h5>{{ alternativa2 }}</h5>
-        <h5>{{ resposta }}</h5>
-        
-        
-        <h5>    {{ user }}</h5>
-        
-        
-        <a href="{% url 'home' %}"><button class="btn btn-primary py-3">Home</button></a>
+        gabarito:{{ x.gabarito }}
+        -->
         <a href="{% url 'questions:resposta' id=x.id %}"><button class="btn btn-primary py-3">responder</button></a>
         {% endfor %}
         
         
+    </div>
+    <div class="col-sm-4 mx-auto my-3 text-center " >
+    <a href="{% url 'home' %}"><button class="btn btn-primary my-3 py-3">Home</button></a>
     </div>
 </div>
 

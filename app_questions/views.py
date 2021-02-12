@@ -96,67 +96,84 @@ def gabarito(request, id):
     alternativa='?alt?'
     resposta ='?'
     alternativa2='?alt2?'
+    id=x.id
     #gabarito= str(gab.first()).lower()
     
-
-    form = GabForm(request.POST or None)
-   # gabarito=' ?'
-    if form.is_valid():
-        #form.save()
-        #form = GabForm()
-        #print(form.cleaned_data, form.cleaned_data.get('pergunta'), form.cleaned_data.get('gabarito'))
-    #    gabarito = form.cleaned_data["gabarito"]
-
-
-   #     pergunta = form.cleaned_data["pergunta"].lower()
-        resposta = str(form.cleaned_data["resposta"]).upper()
-        alternativa = form.cleaned_data["alternativa"]
-        alternativa2 = form.cleaned_data["alternativa2"]
-        
-    msg=''
-        
-    #if resposta == gabarito: 
-    if resposta == gabarito: 
-        msg='parabens.Vc acertou :-)'
+    if request.method== 'GET':
+        form = GabForm()
+        msg='envie sua resposta:)'
+        id=x.id
         context={
-            'msg':msg ,
+            'form':form,
+            'msg':msg,
+            'id':id,
             "resposta":resposta,
             "gabarito":gabarito,
-            "gab":gab,
-            "user":user,
             "campos":campos_gab
-    #        "num":num,
-     #       "per":per
-        }
-       # return confere(request, resposta, gabarito, msg)
-        #return redirect('questions:confere', resposta, gabarito, msg)
- #       return HttpResponseRedirect(reverse('questions:confere', args=[msg]))
-    #    return render(request, 'app_questions/confere.html', context )
-    else:
-        msg='não desista.Tente de novo :-|'       
-        context={
+                        }
+        return render(request, 'app_questions/resposta.html', context)
+
+    elif request.method =='POST':    
+        form = GabForm(request.POST or None)
+    # gabarito=' ?'
+        if form.is_valid():
+            #form.save()
+            #form = GabForm()
+            #print(form.cleaned_data, form.cleaned_data.get('pergunta'), form.cleaned_data.get('gabarito'))
+        #    gabarito = form.cleaned_data["gabarito"]
+
+
+    #     pergunta = form.cleaned_data["pergunta"].lower()
+            resposta = str(form.cleaned_data["resposta"]).upper()
+        # alternativa = form.cleaned_data["alternativa"]
+            #alternativa2 = form.cleaned_data["alternativa2"]
+            
+        msg=''
+            
+        #if resposta == gabarito: 
+        if resposta == gabarito: 
+            msg='parabens.Vc acertou :-)'
+            context={
+                'msg':msg ,
                 "resposta":resposta,
                 "gabarito":gabarito,
-                'msg':msg,
                 "gab":gab,
                 "user":user,
                 "campos":campos_gab
-        #      "num":num,
-        #     "per":per
+        #        "num":num,
+        #       "per":per
             }
-       # return confere(request, resposta, gabarito, msg)
-        #return render(request, 'app_questions/confere.html', context )
-  #      return HttpResponseRedirect(reverse('questions:confere', args=[msg]))
-        #return redirect('questions:confere', resposta, gabarito, msg)
-    
+            #return confere(request, resposta, gabarito, msg)
+            #return redirect('questions:confere', resposta, gabarito, msg)
+    #       return HttpResponseRedirect(reverse('questions:confere', args=[msg]))
+            return render(request, 'app_questions/confere.html', context )
+            #<a href="{% url 'questions:confere' gabarito resposta msg %}"><button class="btn btn-primary py-3">confere ?</button></a>
+        else:
+            msg='não desista.Tente de novo :-|'       
+            context={
+                    "resposta":resposta,
+                    "gabarito":gabarito,
+                    'msg':msg,
+                    "gab":gab,
+                    "user":user,
+                    "campos":campos_gab
+            #      "num":num,
+            #     "per":per
+                }
+            
+            #return confere(request, resposta, gabarito, msg)
+            #return render(request, 'app_questions/confere.html', context )
+    #      return HttpResponseRedirect(reverse('questions:confere', args=[msg]))
+            #return redirect('questions:confere', resposta, gabarito, msg)
+        
     print(type(pergunta),pergunta)
     
     print(type(gabarito),gabarito)
     print(request.user)
     print(type(resposta), resposta)    
     print(msg)
-    print(type(alternativa), alternativa)    
-    print(type(alternativa2), alternativa2)
+    #print(type(alternativa), alternativa)    
+    #print(type(alternativa2), alternativa2)
        # return render(request,'app_questions/confere.html',{'gabarito2':gabarito})
     context = {
                     "title": "resposta Page",

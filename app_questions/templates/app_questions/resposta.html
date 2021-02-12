@@ -3,9 +3,7 @@
 {% block content %}
 <div class="row bg-warning">
     <div class="col-sm-10 mx-auto text-center" >
-        <h5>{{ title}} </h5>
-        <h5>{{ content }}</h5>
-        
+       
         {% for x in campos %}
         <h5> (Questão-{{ x.id }}) a pergunta é {{ x.pergunta }}. gabarito:{{ x.gabarito }}</h5>
         
@@ -16,17 +14,35 @@
             <input type="submit" value="Enviar" />
         </form>
         
-        <h5>    {{ user }}, {{ msg }}</h5>
-        <h5>    {{ resposta }}, {{ alternativa }}, {{ alternativa2 }}</h5>
-                  
-        <a href="{% url 'questions:confere' gabarito resposta msg %}"><button class="btn btn-primary py-3">confere ?</button></a>
+        {% endfor %}
+        <h5>  GET  {{ user }}, {{ msg }}</h5>
+        
+        <!--
+        {% for x in campos %}
+        <h5> (Questão-{{ x.id }}) a pergunta é {{ x.pergunta }}. gabarito:{{ x.gabarito }}</h5>
+        
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <input type="submit" value="Enviar" />
+        </form>
         
         {% endfor %}
+        <h5>  POST  {{ user }}, {{ msg }}</h5>
+        -->
+        <!--
+        <h5>{{ title}} </h5>
+        <h5>{{ content }}</h5>
+        
+        <h5>    {{ resposta }}</h5>
+                  
+        <a href="{% url 'questions:confere' gabarito resposta msg %}"><button class="btn btn-primary py-3">confere ?</button></a>
+              
         <a href="{% url 'questions:question'  %}"><button class="btn btn-primary py-3">lista de questões</button></a>
-        
-        
+               
         <a href="{% url 'home' %}"><button class="btn btn-primary py-3">Home</button></a>
-        
+        -->
         
     </div>
 </div>
