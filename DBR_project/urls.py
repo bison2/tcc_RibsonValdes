@@ -20,7 +20,8 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include 
 
-from .views import (home_page, 
+from .views import (home_page,
+                    premium_page,
                     about_page, 
                     contact_page, 
                     login_page, 
@@ -32,6 +33,7 @@ from .views import (home_page,
 
 urlpatterns = [
     path('', home_page, name='home'),
+    path('premium/', premium_page, name='premium'),
     path('about/', about_page, name='about'),
     path('contact/', contact_page, name='contact'),
     #path('cart/', cart_home, name='cart'),

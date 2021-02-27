@@ -11,12 +11,17 @@
         <h6>{{ content }}</h6>
             
         
-        <h6> sua resposta foi {{ resposta }}</h6>
+        <h6> sua resposta foi  {{ resposta }}</h6>
         <h6> o gabarito é {{ gabarito }}</h6>
-        <h6 class="bg-success">a msg é :{{ msg }}</h6>
-        <h6 class="bg-primary"> a sua pontuação é {{ pontos }}</h6>
-
+        <h6>a msg é :{{ msg }}</h6>
         
+        {% if resposta == gabarito %}
+        <span style="font-size: 3em; color:rgba(12, 9, 240, 0.904)">
+            <i class="far fa-grin-beam"></i>
+        </span>
+        {% endif %}
+
+                
         <a href="{% url 'home' %}"><button class="btn btn-primary py-3">Home</button></a>
         <a href="{% url 'questions:question' %}"><button class="btn btn-primary py-3">lista de questões</button></a>
        

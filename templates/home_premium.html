@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+<title> Home Premium</title>
+
+{% block base_head %}
+    <link rel='stylesheet' href='{% static "css/main.css" %}'>
+{% endblock base_head %}
+
+{% block content %}
+    <!-- Aqui vai tudo que é referente a home_page  -->
+    <div class="row mb-3">
+        
+        
+        <div class='col-sm-8 px-2 m-auto border border-primary rounded my-1 py-3 text-primary text-center'>
+            <span style="font-size: 3em; color:rgba(12, 9, 240, 0.904)">
+                <i class="far fa-grin-beam"></i>
+            </span>
+            <h1>{{ title }}</h1>
+                <h2>{{ content }} </h2>   
+            <img src="{% static 'img/loja_virtual.jpg' %}" class='img-fluid' />
+                <h5>{{ content }}</h5> 
+               
+                <a href="{% url 'pessoa_disc:homepessoa' %}"><button class="btn btn-primary mx-auto my-2">lista de pessoas usando url</button></a>
+                              
+                <a href="{% url 'questions:question' %}"><button class="btn btn-primary mx-auto my-2">lista de questões</button></a>
+        </div>
+        
+    </div>
+           
+{% endblock %}

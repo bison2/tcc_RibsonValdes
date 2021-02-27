@@ -12,8 +12,19 @@ def home_page(request):
                     "content": "Bem vindo a Home Page",
               }
     if request.user.is_authenticated:
-        context["premium_content"] = "Você é um usuário Premium"
+        return redirect('/premium')
+        #context["premium_content"] = "Você é um usuário Premium"
     return render(request, "home_page.html", context)
+
+def premium_page(request):
+    print(request.session.get('cart_id','Unknow'))
+      
+    context = {
+                    "title": "Home Premium",
+                    "content": "Bem vindo a Home Premium",
+              }
+    
+    return render(request, "home_premium.html", context)
 
 def about_page(request):
     context = {
