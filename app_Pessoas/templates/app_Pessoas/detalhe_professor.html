@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row mx-auto bg-warning py-2">
+            <div class="col-10 mx-auto bg-primary py-2 text-warning text-center" >
+            <h4>Detalhes do professor {{pessoa.nome}} </h4>
+            </div>
+
+            <div class="col-sm-8 mx-auto py-2 text-warning text-center">
+            
+                <table class="table table-hover table-dark table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Professor</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">cpf</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td> {{pessoa.id}}</td>
+                        <td> {{pessoa.nome}}</td>
+                        <td> {{pessoa.titulo}}</td>
+                        <td> {{pessoa.cpf}}</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div> 
+        </div>   
+        
+        <hr>
+        <div class="row mx-auto bg-dark">
+
+            <div class="col-sm-10 mx-auto py-3 text-center text-warning">
+                <h4 class=" bg-primary ">Relacionamento manytomany </br> professores e disciplinas</h4>    
+            </div>
+            
+            <div class="col-sm-4 mx-auto py-2 text-warning text-center">
+               
+            <table class="table table-hover table-sm border border-warning">
+                <caption class="text-warning">Lista de professores e suas disciplinas</caption>
+                <thead>
+                <tr class="bg-primary ">
+                    <th scope="col"> {{disc_prof.nome}} tem o título de {{disc_prof.titulo}} e tem {{ disc_prof.discProf.count }} disciplina a lecionar  </th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for d in disc_prof.discProf.disciplina  %}
+                    <tr>
+                       <td> {{d.nome}}</td> 
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            </div> 
+            
+        </div>
+            
+        </div>
+        <a href="{% url 'home' %}"><button class="btn btn-primary">Home</button></a>
+        
+    </div>    
+    {% endblock %}

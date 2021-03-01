@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block content %}
+    
+        <!--
+        <div class="row mx-auto bg-warning py-2">
+            <div class="col-10 mx-auto bg-primary py-2 text-warning text-center" >
+            <h4>Tabelas de Pessoas(professor e alunos) </h4>
+            </div>
+
+            <div class="col-sm-10  mx-auto py-2  text-center">
+                {% for pessoa in pessoas %}
+                <table class=" table table-responsive table-hover   table-sm  ">
+                    <thead>
+                        <tr>
+                            <th >Id</th>
+
+                            <th  class="col">Pessoas</th>
+
+                            <th >detalhe url</th>
+                                         
+                            <th > get_absolut_url</th>
+                            <th > editar ou deletar </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    
+                    <tr>
+                        
+                        <td > {{pessoa.id}}</td>
+
+                        <td class="col"> {{pessoa.nome}}</td>
+                      
+                        <td >
+                            <a href="{% url 'pessoa_disc:detalhe' id=pessoa.id %}"><button class="btn btn-primary mx-auto my-2 ">detalhe url</button></a>
+                        </td>
+                        <td > 
+                            <a href="{{ pessoa.get_absolut_url }}"><button class="btn btn-success mx-auto my-2 "> get_absolut_url</button></a>
+                        </td>
+                        
+                                     
+                    </tr>        
+                    </tbody>
+                            
+                    
+                </table>
+                {% endfor %}
+            </div> 
+        </div>   
+        
+        <a href="{% url 'home' %}"><button class="btn btn-primary">Home</button></a>
+        
+        <hr>
+        -->
+    <div class="container">
+        <hr>
+
+        <div class="row mx-auto py-3 bg-danger"> 
+            <h4 class="col-sm-10 mx-auto bg-primary text-center text-warning">Disciplinas</h4>    
+            
+            {% for disciplina in disciplinas %}
+            <div class="col-sm-6 mx-auto text-center py-2 text-warning text-center">
+                 
+                <table class="table table-hover table-dark table-sm">
+                    <thead>
+                        <tr class="bg-primary text-warning">
+                            
+                            <th scope="col"> Disciplinas </th>
+                            <th scope="col"> detalhe  </th>
+                            
+                        </tr>
+                    
+                    <tbody>
+                        
+                        <tr>
+                        
+                            <td>
+                                 {{disciplina.nome}}
+                            </td> 
+                            <td>
+                                <div class="col-sm-4 mx-auto text-center py-2 text-warning text-center"> 
+                                    <a href="{% url 'pessoa_disc:detalhedisciplina' id=disciplina.id %}"><button class="btn btn-primary mx-auto my-2"> detalhe de disciplina</button></a>
+                                </div>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div> 
+                {% endfor %}
+        </div>
+    
+        <hr>
+
+        <div class="row sm-10 mx-auto py-3 bg-warning">
+            <div class="col-sm-4 mx-auto text-center py-2 text-warning text-center"> 
+                <a href="{% url 'questions:question' %}"><button class="btn btn-primary mx-auto my-2">lista de questões</button></a>
+            </div>
+            <div class="col-sm-4 mx-auto text-center py-2 text-warning text-center"> 
+                <a href="{% url 'pessoa_disc:homeprofessor' %}"><button class="btn btn-primary mx-auto my-2">lista de professores</button></a>
+            </div>
+            <div class="col-sm-4 mx-auto text-center py-2 text-warning text-center"> 
+                <a href="{% url 'pessoa_disc:homealuno' %}"><button class="btn btn-primary mx-auto my-2">lista de alunos usando url</button></a>
+            </div>
+                
+        </div>
+        <hr>
+    </div>
+     
+{% endblock %}

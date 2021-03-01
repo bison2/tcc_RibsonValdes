@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row mx-auto bg-warning py-2">
+            <div class="col-10 mx-auto bg-primary py-2 text-warning text-center" >
+            <h4>Detalhes do aluno {{pessoa.nome}} </h4>
+            </div>
+
+            <div class="col-sm-8 mx-auto py-2 text-warning text-center">
+            
+                <table class="table table-hover table-dark table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Aluno</th>
+                            <th scope="col">Turma</th>
+                            <th scope="col">cpf</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td> {{pessoa.id}}</td>
+                        <td> {{pessoa.nome}}</td>
+                        <td> {{pessoa.turma}}</td>
+                        <td> {{pessoa.cpf}}</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div> 
+        </div>   
+        
+        <hr>
+        <div class="row mx-auto bg-dark">
+
+            <div class="col-sm-10 mx-auto py-3 text-center text-warning">
+                <h4 class=" bg-primary ">Relacionamento manytomany </br> alunos e disciplinas</h4>    
+            </div>
+            
+            <div class="col-sm-4 mx-auto py-2 text-warning text-center">
+               
+            <table class="table table-hover table-sm border border-warning">
+                <caption class="text-warning">Lista de alunos e suas disciplinas</caption>
+                <thead>
+                <tr class="bg-primary ">
+                    <th scope="col"> {{disc_aluno.nome}}  estuda  {{ disc_aluno.discAluno.count }} disciplinas </th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for d in disc_aluno.discAluno.disciplina  %}
+                    <tr>
+                       <td> {{d.nome}}</td> 
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            </div> 
+            
+        </div>
+            
+        </div>
+        <a href="{% url 'home' %}"><button class="btn btn-primary">Home</button></a>
+        
+    </div>    
+    {% endblock %}

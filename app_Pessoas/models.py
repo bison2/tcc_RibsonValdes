@@ -39,6 +39,13 @@ class DisciplinaManager(models.Manager):
     def disciplina(self):
         return self.get_queryset().order_by('nome')
 
+    def get_by_id(self, id):
+        qs = self.get_queryset().filter(id=id)
+        if qs.count() == 1:
+            return qs.first()
+        return None
+        
+
 class Pessoa(models.Model):
     nome = models.CharField(max_length = 100)
    
@@ -52,9 +59,7 @@ class Pessoa(models.Model):
     def get_absolut_url(self):
         return reverse("pessoa_disc:detalhe", kwargs={"id": self.id})
        
-
-    
-
+ 
 
 class P_professor(Pessoa):
     cpf = models.CharField(max_length = 11)

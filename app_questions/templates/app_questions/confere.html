@@ -21,9 +21,24 @@
         </span>
         {% endif %}
 
-                
-        <a href="{% url 'home' %}"><button class="btn btn-primary py-3">Home</button></a>
-        <a href="{% url 'questions:question' %}"><button class="btn btn-primary py-3">lista de questões</button></a>
+        <hr>
+
+        <div class="row sm-10 mx-auto py-3 bg-warning">
+            <div class="col-sm-3 mx-auto text-center py-2 text-warning text-center"> 
+                <a href="{% url 'questions:question' %}"><button class="btn btn-primary mx-auto my-2">lista de questões</button></a>
+            </div>
+            <div class="col-sm-3 mx-auto text-center py-2 text-warning text-center"> 
+                <a href="{% url 'pessoa_disc:homeprofessor' %}"><button class="btn btn-primary mx-auto my-2">lista de professores</button></a>
+            </div>
+            <div class="col-sm-3 mx-auto text-center py-2 text-warning text-center"> 
+                <a href="{% url 'pessoa_disc:homedisciplina' %}"><button class="btn btn-primary py-3">lista de disciplinas</button></a>
+            </div>    
+            <div class="col-sm-3 mx-auto text-center py-2 text-warning text-center"> 
+            <a href="{% url 'home' %}"><button class="btn btn-primary py-3">Home</button></a>
+            </div>
+        </div>
+        <hr>       
+        
        
     </div>
 </div>
