@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 from decouple import config, Csv
 import django_heroku
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -53,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'DBR_project.urls'
@@ -140,5 +142,7 @@ STATIC_ROOT = os.path.join(os.path.dirname('BASE_DIR'), 'static_cdn', 'static_ro
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT =os.path.join(os.path.dirname('BASE_DIR'), 'static_cdn', 'media_root') 
+
+STATIC_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 django_heroku.settings(locals())
