@@ -162,7 +162,7 @@ def gabarito(request, id):
                 }
             
             #return confere(request, resposta, gabarito, msg)
-            #return render(request, 'app_questions/confere.html', context )
+            return render(request, 'app_questions/confere.html', context )
     #      return HttpResponseRedirect(reverse('questions:confere', args=[msg]))
             #return redirect('questions:confere', resposta, gabarito, msg)
         
