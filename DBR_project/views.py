@@ -20,8 +20,9 @@ def premium_page(request):
     print(request.session.get('cart_id','Unknow'))
       
     context = {
-                    "title": "Home Premium",
-                    "content": "Bem vindo a Home Premium",
+                    "title": "Trabalho de conclusão de curso",
+                    "content": "Bem vindo ao T.C.C. do Ribson",
+                    "contentdois":"IFB-TSI-2021."
               }
     
     return render(request, "home_premium.html", context)
