@@ -1,2 +1,4 @@
 
-web: gunicorn DBR_project.wsgi --timeout 90 
+web: gunicorn DBR_project.wsgi --log-file -
+python manage.py collectstatic --noinput 
+python manage.py migrate
