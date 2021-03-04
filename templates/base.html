@@ -10,12 +10,14 @@
         {% include 'base/css.html' %}
         {% block base_head %} {% endblock %}
     </head>
-    <body>
-        {% include 'base/navbar.html' with nome_da_marca='Loja virtual' %}
+    <body class="border border-primary">
+        {% include 'base/navbar.html' with nome_da_marca='DBR e TPACK' %}
 
-        <div class="container">
+        
         {% block content %} {% endblock %}
-        </div>
+        
+        {% include 'base/footer.html'%}
+
         {% include 'base/js.html' %}
     </body>
 </html>
