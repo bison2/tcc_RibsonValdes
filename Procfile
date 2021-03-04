@@ -1,2 +1,2 @@
 
-web: gunicorn DBR_project.wsgi --log-file - 
+web: gunicorn DBR_project.wsgi --timeout 90 
