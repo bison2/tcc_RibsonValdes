@@ -11,7 +11,7 @@
 {% block content %}
     <!-- Aqui vai tudo que é referente a home_page  -->
     <div class="row mb-3">
-        <div class="col-sm-9 text-center border border-primary rounded my-1 py-3 ">
+        <div class="col-sm-8 px-2 m-auto border border-primary rounded my-1 py-3 text-primary text-center ">
             
                 <span style="font-size: 3em; color: rgba(12, 9, 240, 0.904);">
                     <i class="fas fa-house-user"></i>
@@ -21,7 +21,7 @@
                 </span>
                 <h5>{{ title }}</h5>
                      
-                <img src="{% static 'img/bola.jpg' %}"  class='img-thumbnail' />
+                <img src="{% static 'img/TPACK.png' %}" style="width:200px; height:200px;"  class='img-thumbnail img-fluid' />
                 <h5>    {{ content }} </h5>
                 
                     <a href="{% url 'login' %}"><button class="btn btn-primary mx-auto my-2">Login (via url)</button></a>

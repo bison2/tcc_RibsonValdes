@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="row bg-warning">
-    <div class="col-sm-10 mx-auto text-center" >
+    <div class="col-sm-10 mx-auto" >
        
         {% for x in campos %}
         <h5> (Questão-{{ x.id }}) a pergunta é {{ x.pergunta }}. gabarito:{{ x.gabarito }}</h5>
@@ -10,8 +10,8 @@
         <form method="POST">
             {% csrf_token %}
             {{ form.as_p }}
-
-            <input type="submit" value="Enviar" />
+            <a href="{% url 'questions:resposta' id=x.id %}"><button class="btn btn-primary py-3">Enviar</button></a>
+            
         </form>
         
         {% endfor %}
