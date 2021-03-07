@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 from django.db.models import CASCADE
 from django.http import Http404
 
+from app_questions.models import Gab, GabManager
+from django.utils import timezone
 
 
 # Create your models here.
@@ -38,6 +40,7 @@ class DisciplinaManager(models.Manager):
     
     def disciplina(self):
         return self.get_queryset().order_by('nome')
+        #return Disciplina.objects.all.order_by('nome')
 
     def get_by_id(self, id):
         qs = self.get_queryset().filter(id=id)
@@ -73,9 +76,14 @@ class P_aluno(Pessoa):
 
 class Disciplina(models.Model):
     nome = models.CharField(max_length = 30)
+    
+   # description = models.TextField()
+    #inicio =  models.DateTimeField(auto_now=True, null = True, blank = True)
+    #final =  models.DateTimeField(auto_now_add=True, null = True, blank = True)
+
     professor = models.ManyToManyField("Pessoa", related_name="discProf")
     aluno = models.ManyToManyField("Pessoa", related_name="discAluno")
-
+    #questao = models.ForeignKey("Gab", on_delete=CASCADE, related_name="discq")
    
     objects = DisciplinaManager()
 

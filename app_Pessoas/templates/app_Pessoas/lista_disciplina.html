@@ -65,7 +65,6 @@
                         <tr class="bg-primary text-warning">
                             
                             <th scope="col"> Disciplinas </th>
-                            <th scope="col"> detalhe  </th>
                             
                         </tr>
                     
@@ -76,9 +75,10 @@
                             <td>
                                  {{disciplina.nome}}
                             </td> 
+                            
                             <td>
                                 <div class="col-sm-4 mx-auto text-center py-2 text-warning text-center"> 
-                                    <a href="{% url 'pessoa_disc:detalhedisciplina' id=disciplina.id %}"><button class="btn btn-primary mx-auto my-2"> detalhe de disciplina</button></a>
+                                    <a href="{% url 'pessoa_disc:detalhedisciplina' id=disciplina.id  %}"><button class="btn btn-primary mx-auto my-2"> detalhe de disciplina</button></a>
                                 </div>
                             </td>
                         </tr>
