@@ -76,7 +76,9 @@ class P_aluno(Pessoa):
 
 class Disciplina(models.Model):
     nome = models.CharField(max_length = 30)
-    
+    data_inicio = models.DateTimeField( null=True, blank=True)
+    data_fim = models.DateTimeField( null=True, blank=True)
+    info=models.TextField(null=True, blank=True)   
    # description = models.TextField()
     #inicio =  models.DateTimeField(auto_now=True, null = True, blank = True)
     #final =  models.DateTimeField(auto_now_add=True, null = True, blank = True)
