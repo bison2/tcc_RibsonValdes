@@ -12,7 +12,7 @@
 <nav  class="navbar navbar-expand-lg navbar-dark bg-primary  mb-3">
   
       <a class="navbar-brand" href="{{home_url}}">
-        <img src="{% static 'img/TPACK.png' %}"  style="width:150px; height:150px;" class='img-fluid'/>
+        <img src="{% static 'img/TPACKFONTE.png' %}"  style="width:150px; height:150px;" class='img-fluid'/>
       </br>
       {% if nome_da_marca %} {{ nome_da_marca }} {% else %} C&oacute;digo Fluente eCommerce {% endif %}</a>
       
@@ -22,8 +22,8 @@
       <div  class="collapse navbar-collapse"  id="navbarNav">
           <ul class="navbar-nav mr-auto">
           <li class="nav-item {% if request.path == home_url %} active {% endif %}">
-            <a class="nav-link bg-primary text-warning " href="{{ home_url }}">
-              <span style="font-size: 3em; color: rgba(249, 253, 7, 0.938);">
+            <a class="nav-link bg-primary text-white " href="{{ home_url }}">
+              <span style="font-size: 3em; color: rgb(255, 255, 250);">
                 <i class="fas fa-house-user"></i>
               </span> 
               <strong>Home</strong>
@@ -32,8 +32,8 @@
           </li>
               
           <li class="nav-item {% if request.path == contact_url %} active {% endif %}">
-            <a class="nav-link bg-primary text-warning" href="{{ contact_url }}">
-              <span style="font-size: 3em; color: rgba(249, 253, 7, 0.938);">
+            <a class="nav-link bg-primary text-white" href="{{ contact_url }}">
+              <span style="font-size: 3em; color: rgb(255, 255, 253);">
                 <i class="fas fa-envelope"></i>
               </span>
               <strong>Contact us</strong>
@@ -41,8 +41,8 @@
           </li>
           {% if request.user.is_authenticated %}
           <li class="nav-item {% if request.path == login_url %} active {% endif %}"> 
-            <a class="nav-link bg-primary text-warning" href="{{ logout_url }}">
-              <span style="font-size: 3em; color: rgba(249, 253, 7, 0.938);">
+            <a class="nav-link bg-primary text-white" href="{{ logout_url }}">
+              <span style="font-size: 3em; color: rgb(250, 250, 246);">
                 <i class="fas fa-user-times"></i>
               </span>
               <strong>Logout</strong>
@@ -50,16 +50,16 @@
           </li>
           {% else %}
           <li class="nav-item {% if request.path == login_url %} active {% endif %}">
-            <a class="nav-link bg-primary text-warning" href="{{ login_url }}">
-              <span style="font-size: 3em; color: rgba(249, 253, 7, 0.938);">
+            <a class="nav-link bg-primary text-white" href="{{ login_url }}">
+              <span style="font-size: 3em; color: rgb(255, 255, 255);">
                 <i class="fas fa-user-check"></i>
               </span>
               <strong>Login</strong>
             </a>
           </li>
           <li class="nav-item {% if request.path == register_url  %} active {% endif %}"> 
-            <a class="nav-link bg-primary text-warning" href="{{ register_url }}">
-              <span style="font-size: 3em; color: rgba(249, 253, 7, 0.938);">
+            <a class="nav-link bg-primary text-white" href="{{ register_url }}">
+              <span style="font-size: 3em; color: rgb(252, 252, 252);">
                 <i class="fas fa-address-card"></i>
               </span>
               <strong>Register</strong>

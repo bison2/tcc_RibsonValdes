@@ -5,7 +5,7 @@
 {% block content %}
 <div class="row  text-primary">
    
-    <div class="col-sm-10 mx-auto" >
+    <div class="col-sm-9 mx-auto py-2 border border-primary" >
        
         <h5>{{ title}} </h5>
         <h6>{{ content }}</h6>
@@ -27,18 +27,18 @@
 
         <hr>
 
-        <div class="row sm-10 mx-auto py-3 bg-warning">
-            <div class="col-sm-3 mx-auto text-center py-2 text-warning text-center"> 
-                <a href="{% url 'questions:question' %}"><button class="btn btn-primary mx-auto my-2">lista de questões</button></a>
+        <div class="row sm-12 mx-auto py-1">
+            <div class="col-sm-3 mx-auto text-center py-1 text-center"> 
+                <a href="{% url 'questions:question' %}"><button class="btn btn-primary mx-auto my-1">Questões</button></a>
             </div>
-            <div class="col-sm-3 mx-auto text-center py-2 text-warning text-center"> 
-                <a href="{% url 'pessoa_disc:homeprofessor' %}"><button class="btn btn-primary mx-auto my-2">lista de professores</button></a>
+            <div class="col-sm-3 mx-auto text-center py-1 text-center"> 
+                <a href="{% url 'pessoa_disc:homeprofessor' %}"><button class="btn btn-primary mx-auto my-1">Professores</button></a>
             </div>
-            <div class="col-sm-3 mx-auto text-center py-2 text-warning text-center"> 
-                <a href="{% url 'pessoa_disc:homedisciplina' %}"><button class="btn btn-primary py-3">lista de disciplinas</button></a>
+            <div class="col-sm-3 mx-auto text-center py-1 text-center"> 
+                <a href="{% url 'pessoa_disc:homedisciplina' %}"><button class="btn btn-primary mx-auto my-1">Disciplinas</button></a>
             </div>    
-            <div class="col-sm-3 mx-auto text-center py-2 text-warning text-center"> 
-            <a href="{% url 'home' %}"><button class="btn btn-primary py-3">Home</button></a>
+            <div class="col-sm-3 mx-auto text-center py-1 text-center"> 
+            <a href="{% url 'home' %}"><button class="btn btn-primary mx-auto my-1">Home</button></a>
             </div>
         </div>
         <hr>     

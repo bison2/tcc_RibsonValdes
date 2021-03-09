@@ -51,8 +51,8 @@ class DisciplinaManager(models.Manager):
 
 class Pessoa(models.Model):
     nome = models.CharField(max_length = 100)
-   
-
+    cpf = models.CharField(max_length=11, null=True, blank=True)
+    email = models.EmailField(max_length=30, null=True, blank=True)
     
     objects = PessoaManager()
     
@@ -65,11 +65,11 @@ class Pessoa(models.Model):
  
 
 class P_professor(Pessoa):
-    cpf = models.CharField(max_length = 11)
+    matricula_prof = models.CharField(max_length = 20, null=True, blank=True)
     titulo = models.CharField(max_length =20)
 
 class P_aluno(Pessoa):
-    cpf = models.CharField(max_length = 11)
+    matricula_aluno = models.CharField(max_length = 20, null=True, blank=True)
     turma = models.CharField(max_length = 20) 
 
 

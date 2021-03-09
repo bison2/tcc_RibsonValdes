@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="container">
-        <div class="row  bg-success">
-            <div class="col-sm-10 mx-auto py-3 text-center text-warning">
+        <div class="row">
+            <div class="col-sm-10 mx-auto py-3 text-center text-white">
                 <h4 class=" bg-primary ">Alunos</h4>    
             </div>
 
-            <div class="col-sm-10 mx-auto py-2 text-warning text-center">
-                <table class="table table-responsive table-dark table-sm">
+            <div class="col-sm-10 mx-auto py-2 text-center">
+                <table class="table table-responsive table-hover table-sm">
                     <thead>
                         <tr class=" text-padrao">
                             
@@ -25,10 +25,10 @@
                             <td> {{aluno.nome}}</td>
                             
                             <td >
-                                <a href="{% url 'pessoa_disc:detalhe' id=aluno.id %}"><button class="btn btn-primary mx-auto my-2 ">detalhe url</button></a>
+                                <a href="{% url 'pessoa_disc:detalhe' id=aluno.id %}"><button class="btn btn-primary mx-auto">detalhe url</button></a>
                             </td>
                             <td > 
-                                <a href="{% url 'pessoa_disc:detalhealuno' id=aluno.id %}"><button class="btn btn-success mx-auto my-2 "> detalhe NOVO</button></a>
+                                <a href="{% url 'pessoa_disc:detalhealuno' id=aluno.id %}"><button class="btn btn-primary mx-auto"> detalhe NOVO</button></a>
                             </td>
                         </tr>
                         {% endfor %}
@@ -41,23 +41,23 @@
         <hr>
         
     
-        <div class="row mx-auto bg-success py-2">
-            <div class="col-sm-10 mx-auto bg-primary py-2 text-warning text-center"> 
+        <div class="row mx-auto py-2">
+            <div class="col-sm-10 mx-auto bg-primary py-2 text-white text-center"> 
                 <h4>Relações de alunos e disciplinas</h4>
                 
             </div>
             
             {% for aluno in disc_aluno %}
-            <div class="col-sm-4 py-2 text-warning text-center border border-bordered border-warning">
+            <div class="col-sm-4 my-1 py-2 text-white text-center border border-primary">
                      
                 <table class="table table-hover table-sm">
-                    <caption class="text-warning">Lista de alunos e suas disciplinas</caption>
+                    <caption class="">Lista de alunos e suas disciplinas</caption>
                     <thead>
-                        <tr class="bg-primary text-warning">
+                        <tr class="bg-primary text-white">
                             <th scope="col"> {{aluno.nome}} estuda {{aluno.discAluno.count}} disciplinas</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="text-dark">
                         {% for e in aluno.discAluno.disciplina %}
                         <tr>
                             <td> {{e.nome}}</td> 
@@ -68,7 +68,11 @@
             </div> 
             {% endfor %}
         </div>
-        <a href="{% url 'pessoa_disc:homedisciplina' %}"><button class="btn btn-primary mx-auto my-2">lista de disciplinas usando url</button></a>
+        <div class="row">
+            <div class="col-sm-3 mx-auto">
+                <a href="{% url 'home' %}"><button class="btn btn-primary mx-auto my-2">home</button></a>
+            </div>
+        </div>
     </div>    
 
 {% endblock %}

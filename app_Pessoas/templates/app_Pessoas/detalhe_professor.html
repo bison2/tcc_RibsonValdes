@@ -2,20 +2,22 @@
 
 {% block content %}
     <div class="container">
-        <div class="row mx-auto bg-warning py-2">
-            <div class="col-10 mx-auto bg-primary py-2 text-warning text-center" >
+        <div class="row mx-auto py-2">
+            <div class="col-10 mx-auto bg-primary py-2 text-white text-center" >
             <h4>Detalhes do professor {{pessoa.nome}} </h4>
             </div>
 
-            <div class="col-sm-8 mx-auto py-2 text-warning text-center">
+            <div class="col-sm-8 mx-auto py-2 text-center">
             
-                <table class="table table-hover table-dark table-sm">
+                <table class="table table-hover table-responsive table-sm">
                     <thead>
                         <tr>
                             <th scope="col">Id</th>
                             <th scope="col">Professor</th>
-                            <th scope="col">Titulo</th>
+                            <th scope="col">email</th>
                             <th scope="col">cpf</th>
+                            <th scope="col">titulo</th>
+                            <th scope="col">matrícula</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -23,8 +25,10 @@
                     <tr>
                         <td> {{pessoa.id}}</td>
                         <td> {{pessoa.nome}}</td>
-                        <td> {{pessoa.titulo}}</td>
+                        <td> {{pessoa.email}}</td>
                         <td> {{pessoa.cpf}}</td>
+                        <td> {{pessoa.titulo}}</td>
+                        <td> {{pessoa.matricula_prof}}</td>
                     </tr>
                     
                     </tbody>
@@ -33,18 +37,18 @@
         </div>   
         
         <hr>
-        <div class="row mx-auto bg-dark">
+        <div class="row mx-auto">
 
-            <div class="col-sm-10 mx-auto py-3 text-center text-warning">
+            <div class="col-sm-10 mx-auto py-3 text-center text-white">
                 <h4 class=" bg-primary ">Relacionamento manytomany </br> professores e disciplinas</h4>    
             </div>
             
-            <div class="col-sm-4 mx-auto py-2 text-warning text-center">
+            <div class="col-sm-4 mx-auto py-2 text-center">
                
-            <table class="table table-hover table-sm border border-warning">
-                <caption class="text-warning">Lista de professores e suas disciplinas</caption>
+            <table class="table table-hover table-sm border border-primary">
+                <caption class="">Professor e suas disciplinas</caption>
                 <thead>
-                <tr class="bg-primary ">
+                <tr class="bg-primary text-white">
                     <th scope="col"> {{disc_prof.nome}} tem o título de {{disc_prof.titulo}} e tem {{ disc_prof.discProf.count }} disciplina a lecionar  </th>
                 </tr>
                 </thead>
@@ -59,9 +63,10 @@
             </div> 
             
         </div>
-            
+        <div class="row">
+            <div class=" col-2 mx-auto">
+            <a href="{% url 'home' %}"><button class="btn btn-primary ">Home</button></a>
+            </div>
         </div>
-        <a href="{% url 'home' %}"><button class="btn btn-primary">Home</button></a>
-        
     </div>    
     {% endblock %}

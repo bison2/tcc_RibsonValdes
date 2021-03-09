@@ -21,8 +21,8 @@ def premium_page(request):
       
     context = {
                     "title": "Trabalho de conclusão de curso",
-                    "content": "Bem vindo ao T.C.C. do Ribson",
-                    "contentdois":"IFB-TSI-2021."
+                    "content": "Estudo dos princípios do Design-Based Research -DBR e do Tecnologycal Pedagogical Content Knowledge- TPACK e Desenvolvimento de Sistema Web de Gestão Acadêmica ",
+                    "contentdois":"Ribson Coelho Cardoch Valdés. IFB-TSI-2021."
               }
     
     return render(request, "home_premium.html", context)
