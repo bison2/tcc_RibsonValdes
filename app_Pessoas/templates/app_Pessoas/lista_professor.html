@@ -8,7 +8,7 @@
             </div>
 
             <div class="col-sm-10 mx-auto text-center">
-                <table class="table table-responsive table-hover  table-sm">
+                <table class="bg-warning table table-responsive table-hover  table-sm">
                     <thead>
                         <tr>
                             <th scope="col">Id</th>
@@ -26,10 +26,10 @@
                             <td> {{prof.nome}}</td>
                            
                             <td >
-                                <a href="{% url 'pessoa_disc:detalhe' id=prof.id %}"><button class="btn btn-primary mx-auto">detalhe url</button></a>
+                                <a href="{% url 'pessoa_disc:detalhe' id=prof.id %}"><button class="btn btn-primary mx-auto"><i class="far fa-eye"></i>   detalhe url</button></a>
                             </td>
                             <td > 
-                                <a href="{% url 'pessoa_disc:detalheprofessor' id=prof.id %}"><button class="btn btn-primary mx-auto"> detalhe NOVO</button></a>
+                                <a href="{% url 'pessoa_disc:detalheprofessor' id=prof.id %}"><button class="btn btn-primary mx-auto"><i class="far fa-eye"></i>    detalhe NOVO</button></a>
                             </td>
                         </tr>
                         {% endfor %}
@@ -48,7 +48,7 @@
             {% for prof in disc_prof %}
             <div class="col-sm-4 mx-auto py-2 text-white text-center">
                
-            <table class="table table-hover table-sm border border-primary">
+            <table class="bg-warning table table-hover table-sm border border-primary">
                 <caption>Lista de professores e suas disciplinas</caption>
                 <thead>
                 <tr class="bg-primary ">

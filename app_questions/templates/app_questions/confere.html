@@ -5,7 +5,7 @@
 {% block content %}
 <div class="row  text-primary">
    
-    <div class="col-sm-9 mx-auto py-2 border border-primary" >
+    <div class="col-sm-9 mx-auto py-2 border border-primary bg-warning" >
        
         <h5>{{ title}} </h5>
         <h6>{{ content }}</h6>
@@ -17,11 +17,14 @@
         
         {% if resposta == gabarito %}
         <span style="font-size: 3em; color:rgba(12, 9, 240, 0.904)">
-            <i class="far fa-grin-beam"></i>
+            <i class="far fa-grin-beam"></i> </br>
+            <i class="far fa-thumbs-up"></i>
         </span>
         {% else %}
         <span style="font-size: 3em; color:rgba(12, 9, 240, 0.904); background-color: rgb(255, 251, 4);">
             <i class="far fa-sad-cry"></i>
+            </br>
+            <i class="far fa-thumbs-down"></i>
         </span>
         {% endif %}
 
