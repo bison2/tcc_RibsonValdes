@@ -16,7 +16,7 @@ from decouple import config, Csv
 import django_heroku
 import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent 
 
 
 # Quick-start development settings - unsuitable for production
@@ -48,13 +48,14 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'DBR_project.urls'
@@ -137,7 +138,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_local')]
 
-STATIC_ROOT = os.path.join(os.path.dirname('BASE_DIR'), 'static_cdn', 'static_root') 
+STATIC_ROOT = os.path.join(os.path.dirname('BASE_DIR'), 'static_cdn', 'static_root', 'staticfiles') 
 
 MEDIA_URL = '/media/'
 
@@ -146,3 +147,4 @@ MEDIA_ROOT =os.path.join(os.path.dirname('BASE_DIR'), 'static_cdn', 'media_root'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 django_heroku.settings(locals())
+
