@@ -8,10 +8,12 @@
 
         <title>Base Template</title>
         {% include 'base/css.html' %}
-        {% block base_head %} {% endblock %}
+        {% block base_head %} 
+        
+        {% endblock %}
     </head>
-    <body>
-        {% include 'base/navbar.html' with nome_da_marca='DBR e TPACK' %}
+    <body >
+        {% include 'base/navbar.html' with nome_da_marca='TPACK' nome_da_marca2='DBR' %}
 
         
         {% block content %} {% endblock %}
