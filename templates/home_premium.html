@@ -8,8 +8,16 @@
 {% block base_head %}
     <!--
     <link rel='stylesheet' href='{% static "css/main.css" %}'>
-    --> 
+    -->
     
+    <style>
+    #backimg {
+    background-image: url('{% static "img/disciplinas.jpg" %}');
+    background-repeat:no-repeat;
+    
+    background-attachment: fixed;
+    }
+    </style>
 
 
 {% endblock base_head %}
@@ -20,8 +28,8 @@
     
 
     
-    <div class="container">
-        <div class="row mb-1">
+    <div id="backimg" class="container">
+        <div  class="row mb-1">
         
         
             <div class='col-sm-10 px-2 mx-auto border border-primary rounded my-1 py-1  text-justify bg-warning'>
@@ -89,20 +97,69 @@
     
     
         <div class="row">
-            <div class="col-12 px-2 border border-info rounded my-1 py-1 text-primary text-center">
+            <div class="col-4 mx-auto px-2 border border-info rounded my-1 py-1 text-primary text-center">
                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                       <div class="carousel-item active">
-                        <img class="d-block  border border-primary img-fluid" src="{% static 'img/professores.jpg' %}" style="width:100%; height:400px;" alt="Primeiro Slide">
+                       <!--
+                        <img class="d-block  border border-primary img-fluid rounded-circle" src="{% static 'img/professores.jpg' %}" style="width:100%; height:400px;" alt="Primeiro Slide">
+                        -->
+                        <figure class="figure">
+                            <a href="{% url 'pessoa_disc:homeprofessor' %}">
+                                <img src="{% static 'img/professores.jpg' %}" style="width:200px; height:200px;" class="figure-img img-fluid rounded-circle " alt="Imagem de um quadrado genérico com bordas arredondadas, em uma figure.">
+                            </a>
+                            <figcaption class="figure-caption">Relação de Professores</figcaption>
+                        </figure>
+                        
+                        </br>
+                            
+                            <a href="{% url 'pessoa_disc:homeprofessor' %}"><button class="btn btn-warning mx-auto my-1"><i class="fas fa-chalkboard-teacher"></i>   Professores</button></a>
+
+                       
                       </div>
                       <div class="carousel-item">
-                        <img class="d-block  border border-primary img-fluid" src="{% static 'img/disciplinas.jpg' %}" style="width:100%; height:400px;" alt="Segundo Slide">
+                          <!--
+                        <img class="d-block  border rounded-circle border-primary img-fluid" src="{% static 'img/disciplinas.jpg' %}" style="width:200px; height:200px;" alt="Segundo Slide">
+                        -->
+
+                        <figure class="figure">
+                            <a href="{% url 'pessoa_disc:homedisciplina' %}">
+                                <img src="{% static 'img/disciplinas.jpg' %}" style="width:200px; height:200px;" class="figure-img img-fluid rounded-circle " alt="Imagem de um quadrado genérico com bordas arredondadas, em uma figure.">
+                            </a>
+                            <figcaption class="figure-caption">Relação de Disciplinas</figcaption>
+                        </figure>
+                        </br>
+                            <a href="{% url 'pessoa_disc:homedisciplina' %}"><button class="btn btn-warning mx-auto my-1"><i class="fas fa-book"></i>   Disciplinas</button></a>
+
                       </div>
                       <div class="carousel-item">
-                        <img class="d-block  border border-primary img-fluid" src="{% static 'img/alunos.jpg' %}" style="width:100%; height:400px;" alt="Terceiro Slide">
+                          <!--
+                        <img class="d-block  border rounded-circle border-primary img-fluid" src="{% static 'img/alunos.jpg' %}" style="width:200px; height:200px;" alt="Terceiro Slide">
+                        -->
+                        <figure class="figure">
+                            <a href="{% url 'pessoa_disc:homealuno' %}">
+                                <img src="{% static 'img/alunos.jpg' %}" style="width:200px; height:200px;" class="figure-img img-fluid rounded-circle border border-primary " alt="Imagem de um quadrado genérico com bordas arredondadas, em uma figure.">
+                            </a>
+                            <figcaption class="figure-caption">Relação de Alunos</figcaption>
+                        </figure>
+                        </br>
+                            <a href="{% url 'pessoa_disc:homealuno' %}"><button class="btn btn-warning mx-auto my-1"><i class="fas fa-book-reader"></i>   Alunos</button></a>
+
+
                       </div>
                       <div class="carousel-item">
-                        <img class="d-block  border border-primary img-fluid" src="{% static 'img/questoes.jpg' %}" style="width:100%; height:400px;" alt="Quarto Slide">
+                          <!--
+                        <img class="d-block  border rounded-circle border-primary img-fluid" src="{% static 'img/questoes.jpg' %}" style="width:200px; height:2ss00px;" alt="Quarto Slide">
+                            -->
+                            <figure class="figure">
+                                <a href="{% url 'questions:question' %}">
+                                    <img src="{% static 'img/questoes.jpg' %}" style="width:200px; height:200px;" class="figure-img img-fluid rounded-circle" alt="Imagem de um quadrado genérico com bordas arredondadas, em uma figure.">
+                                </a>
+                                <figcaption class="figure-caption">Relação de Questões</figcaption>
+                            </figure>
+                            </br>
+                                <a href="{% url 'questions:question' %}"><button class="btn btn-warning mx-auto my-1"><i class="fas fa-square-root-alt"></i>   Questões</button></a>
+
                       </div>
                     </div>
                 </div>

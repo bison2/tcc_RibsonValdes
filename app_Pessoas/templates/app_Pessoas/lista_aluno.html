@@ -1,6 +1,25 @@
 {% extends "base.html" %}
+{% load static %}
+{% block base_head %}
+    <!--
+    <link rel='stylesheet' href='{% static "css/main.css" %}'>
+    -->
+    
+    <style>
+    #backaluno {
+    background-image: url('{% static "img/alunos.jpg" %}');
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    }
+    </style>
+
+
+{% endblock base_head %}
+
+
 {% block content %}
-    <div class="container">
+    <div id="backaluno" class="container">
         <div class="row">
             <div class="col-sm-10 mx-auto py-3 text-center text-white">
                 <h4 class=" bg-primary ">Alunos</h4>    

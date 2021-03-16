@@ -1,9 +1,20 @@
 {% extends "base.html" %}
 {% load static %}
-{% block content %}
+{% block base_head %}
+<style>
+    #backq {
+    background-image: url('{% static "img/pensar.jpg" %}');
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    }
+    </style>
 
+{% endblock base_head %}
+{% block content %}
+<div id="backq" class="container">
 <div class="row">
-    <div class="col-sm-9 mx-auto py-2 border border-primary bg-warning" >
+    <div class="col-sm-7 mx-auto my-2 py-2 border border-primary bg-warning" >
        
         <h5> Bem vindo,  {{ user }}</h5>
         {% for x in gab %}
@@ -20,9 +31,12 @@
         
         
     </div>
+</div>
+<div class="row">
     <div class="col-sm-4 mx-auto my-3 text-center " >
     <a href="{% url 'home' %}"><button class="btn btn-primary my-3 py-3">Home</button></a>
     </div>
 </div>
 
+</div>
 {% endblock %}

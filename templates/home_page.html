@@ -1,15 +1,25 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% block base_head %}
+    
+    <style>
+    #backtpack {
+        background-image: url('{% static "img/TPACKFONTE.png" %}');
+        background-repeat:no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        }
+    </style>
 
+{% endblock base_head %}
 <title> Home page</title>
 
-{% block base_head %}
-    <link rel='stylesheet' href='{% static "css/main.css" %}'>
-{% endblock base_head %}
+
 
 {% block content %}
     <!-- Aqui vai tudo que é referente a home_page  -->
+    <div id="backtpack" class="container">
     <div class="row mb-3">
         <div class="col-sm-8 px-2 m-auto border border-primary rounded my-1 py-3 text-primary text-center ">
             
@@ -53,5 +63,5 @@
         {% endif %}
         -->
     </div>
-           
+</div>           
 {% endblock %}

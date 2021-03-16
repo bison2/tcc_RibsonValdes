@@ -5,11 +5,18 @@
     <link rel='stylesheet' href='{% static "css/main.css" %}'>
     
     -->
-
+    <style>
+        #backfooter{
+        background-image: url('{% static "img/mapa.jpg" %}');
+        background-repeat:no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        }
+        </style>
 
 {% endblock base_head %}
 
-<div class="container my-2 text-center text-white bg-primary">
+<div id="backfooter" class="container my-2 text-center text-white bg-primary">
     <div  class="row "> 
         <div class="col-sm-12 border-right border-white bg-info ">
             <h2><i class="fas fa-sitemap"></i>   mapa do site</h2>
