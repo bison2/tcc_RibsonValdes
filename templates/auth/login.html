@@ -1,26 +1,51 @@
 
 {% extends "base.html" %}
 
+{% load static %}
+
+{% block base_head %}
+    <!--
+    <link rel='stylesheet' href='{% static "css/main.css" %}'>
+    
+    -->
+    <style>
+        #backlogin{
+        background-image: url('{% static "img/TPACKFONTE.png" %}');
+        background-repeat:repeat;
+        background-attachment: fixed;
+        background-size: 200px 200px;
+        background-position:right top;
+        
+        }
+        </style>
+
+{% endblock base_head %}
+
 {% block content %} 
-<!--
-{% include 'base/navbar.html' with nome_da_marca=brand %}
--->
-<div class='text-center'>
-    <h1>{{ title }}</h1>
-</div>
-<div class='container'>
+
+<div id="backlogin" class='container'>
+
+
     <div class='row'>
-        <div class='col'>
-            <p>{{ content }}</p>
-            <div class='col-sm-6 col-12'>
+        
+            <div class='col-sm-9 mx-auto text-center'>
+                <h1>{{ title }}</h1>
+                <h4>{{ content }}</h4>
+            </div>
+
+            
+            <div class='col-sm-8 bg-primary mx-auto'>
             <form method='POST'>
                 {% csrf_token %}
                 {{form}}
                 <button type='submit' class='btn btn-success '>Enviar</button>
             </form>
             </div>
+            <div class="col-sm-6 text-center text-white mx-auto mb-1">
+                <a href="<a href="http://tpack.org">   " target="_blanck">Background vector created by tpack.org - www.tpack.org">   </div>
         </div>
     </div>
+    
 </div>
 
 {% endblock %}

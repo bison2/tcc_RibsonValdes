@@ -3,10 +3,11 @@
 {% block base_head %}
 <style>
     #backq {
-    background-image: url('{% static "img/pensar.jpg" %}');
-    background-repeat:no-repeat;
-    background-size: cover;
+    background-image: url('{% static "img/questoes.jpg" %}');
+    background-repeat:repeat;
     background-attachment: fixed;
+    background-size: 200px 200px;
+    background-position:right top;
     }
     </style>
 
@@ -37,6 +38,10 @@
     <a href="{% url 'home' %}"><button class="btn btn-primary my-3 py-3">Home</button></a>
     </div>
 </div>
-
+<div class="row">
+    <div class="col-sm-6 mx-auto text-right text-white ">
+        <a href="https://www.pexels.com/pt-br/licenca/" target="_blanck">Background vector created by pexels-www.pexels.com </a>
+    </div>
+</div>
 </div>
 {% endblock %}

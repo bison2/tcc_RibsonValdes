@@ -6,9 +6,14 @@
     <style>
     #backtpack {
         background-image: url('{% static "img/estudo.jpg" %}');
-        background-repeat:no-repeat;
         background-size: cover;
-        background-attachment: fixed;
+        
+       /* background-attachment: fixed;
+       width:200px;
+        height:200px;
+        background-repeat:repeat;
+         background-position:right top;
+       */
         }
     </style>
 
@@ -21,7 +26,7 @@
     <!-- Aqui vai tudo que é referente a home_page  -->
     <div id="backtpack" class="container">
     <div class="row mb-3">
-        <div class="col-sm-8 px-2 m-auto border border-primary rounded my-1 py-3 text-primary text-center ">
+        <div class="col-sm-9 px-2 m-auto border border-primary rounded my-1 py-3 text-primary text-center ">
             
                 <span style="font-size: 3em; color: rgba(12, 9, 240, 0.904);">
                     <i class="fas fa-house-user"></i>
@@ -39,6 +44,14 @@
                     <a href="{% url 'register' %}"><button class="btn btn-primary mx-auto my-2">Register (via url)</button></a>
                        
         </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 mx-auto text-right text-white ">
+            <a href="https://www.pexels.com/pt-br/licenca/" target="_blanck">Background vector created by pexels - www.pexels.com </a>
+           
+        </div>
+    </div>
+</div>
         <!--
         {% if request.user.is_authenticated %}
         
@@ -62,6 +75,5 @@
         </div>
         {% endif %}
         -->
-    </div>
-</div>           
+               
 {% endblock %}

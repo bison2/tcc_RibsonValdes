@@ -8,9 +8,10 @@
     <style>
     #backprof {
     background-image: url('{% static "img/professores.jpg" %}');
-    background-repeat:no-repeat;
-    background-size: cover;
+    background-repeat:repeat;
     background-attachment: fixed;
+    background-size: 200px 200px;
+    background-position:right top;
     }
     </style>
 
@@ -87,6 +88,11 @@
         <div class="row">
             <div class="col-sm-3 mx-auto">
                 <a href="{% url 'pessoa_disc:homedisciplina' %}"><button class="btn btn-primary mx-auto my-2">Disciplinas</button></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 mx-auto text-right text-white ">
+                <a href="https://www.pexels.com/pt-br/licenca/" target="_blanck">Background vector created by pexels-www.pexels.com </a>
             </div>
         </div>
     </div>    
