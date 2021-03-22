@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block base_head %}
+<!--
 <style>
     #backq {
     background-image: url('{% static "img/questoes.jpg" %}');
@@ -10,12 +11,22 @@
     background-position:right top;
     }
     </style>
+    -->
+    <style>
+        #backq {
+            background-color:rgb(210, 248, 248);
+
+        }
+        .btcolor {
+            background-color:#ffff99
+        }
+    </style>
 
 {% endblock base_head %}
 {% block content %}
-<div id="backq" class="container">
+<div id="backq" class="container border border-dark">
 <div class="row">
-    <div class="col-sm-7 mx-auto my-2 py-2 border border-primary bg-warning" >
+    <div class="col-sm-11 mx-auto my-2 py-2 border border-primary btcolor" >
        
         <h5> Bem vindo,  {{ user }}</h5>
         {% for x in gab %}
@@ -27,7 +38,7 @@
         <h5>{{ alternativa2 }}</h5>
         gabarito:{{ x.gabarito }}
         -->
-        <a href="{% url 'questions:resposta' id=x.id %}"><button class="btn btn-primary py-3">responder</button></a>
+        <a href="{% url 'questions:resposta' id=x.id %}"><button class="btn btn-info py-3">responder</button></a>
         {% endfor %}
         
         
@@ -35,13 +46,15 @@
 </div>
 <div class="row">
     <div class="col-sm-4 mx-auto my-3 text-center " >
-    <a href="{% url 'home' %}"><button class="btn btn-primary my-3 py-3">Home</button></a>
+    <a href="{% url 'home' %}"><button class="btn btn-info my-3 py-3">Home</button></a>
     </div>
 </div>
+<!--
 <div class="row">
     <div class="col-sm-6 mx-auto text-right text-white ">
         <a href="https://www.pexels.com/pt-br/licenca/" target="_blanck">Background vector created by pexels-www.pexels.com </a>
     </div>
 </div>
+-->
 </div>
 {% endblock %}

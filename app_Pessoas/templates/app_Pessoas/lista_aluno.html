@@ -4,7 +4,7 @@
     <!--
     <link rel='stylesheet' href='{% static "css/main.css" %}'>
     -->
-    
+    <!--
     <style>
     #backaluno {
     background-image: url('{% static "img/alunos.jpg" %}');
@@ -13,20 +13,30 @@
     background-attachment: fixed;
     }
     </style>
+    -->    
+    <style>
+        #backaluno {
+            background-color:rgb(210, 248, 248);
+
+        }
+        .btcolor {
+            background-color:#ffff99
+        }
+    </style>
 
 
 {% endblock base_head %}
 
 
 {% block content %}
-    <div id="backaluno" class="container">
+    <div id="backaluno" class="container border border-dark">
         <div class="row">
-            <div class="col-sm-10 mx-auto py-3 text-center text-white">
-                <h4 class=" bg-primary ">Alunos</h4>    
+            <div class="col-sm-10 mx-auto py-3 text-center text-dark">
+                <h4 class=" btcolor ">Alunos</h4>    
             </div>
 
             <div class="col-sm-10 mx-auto py-2 text-center">
-                <table class="bg-warning table table-responsive table-hover table-sm">
+                <table class="btcolor table table-responsive table-hover table-sm">
                     <thead>
                         <tr class=" text-padrao">
                             
@@ -44,10 +54,10 @@
                             <td> {{aluno.nome}}</td>
                             
                             <td >
-                                <a href="{% url 'pessoa_disc:detalhe' id=aluno.id %}"><button class="btn btn-primary mx-auto"><i class="far fa-eye"></i>detalhe url</button></a>
+                                <a href="{% url 'pessoa_disc:detalhe' id=aluno.id %}"><button class="btn btn-info mx-auto"><i class="far fa-eye"></i>detalhe url</button></a>
                             </td>
                             <td > 
-                                <a href="{% url 'pessoa_disc:detalhealuno' id=aluno.id %}"><button class="btn btn-primary mx-auto"><i class="far fa-eye"></i> detalhe NOVO</button></a>
+                                <a href="{% url 'pessoa_disc:detalhealuno' id=aluno.id %}"><button class="btn btn-info mx-auto"><i class="far fa-eye"></i> detalhe NOVO</button></a>
                             </td>
                         </tr>
                         {% endfor %}
@@ -61,18 +71,18 @@
         
     
         <div class="row mx-auto py-2">
-            <div class="col-sm-10 mx-auto bg-primary py-2 text-white text-center"> 
+            <div class="col-sm-10 mx-auto btcolor py-2 text-dark text-center"> 
                 <h4>Relações de alunos e disciplinas</h4>
                 
             </div>
             
             {% for aluno in disc_aluno %}
-            <div class="col-sm-4 my-1 py-2 text-white text-center border border-primary">
+            <div class="col-sm-4 my-1 py-2 text-dark text-center border border-primary">
                      
-                <table class="bg-warning table table-hover table-sm">
-                    <caption class="">Lista de alunos e suas disciplinas</caption>
+                <table class="btcolor table table-hover table-sm">
+                    <caption class="text-dark">Lista de alunos e suas disciplinas</caption>
                     <thead>
-                        <tr class="bg-primary text-white">
+                        <tr class="btcolor text-dark">
                             <th scope="col"> {{aluno.nome}} estuda {{aluno.discAluno.count}} disciplinas</th>
                         </tr>
                     </thead>
@@ -88,15 +98,17 @@
             {% endfor %}
         </div>
         <div class="row">
-            <div class="col-sm-3 mx-auto">
-                <a href="{% url 'home' %}"><button class="btn btn-primary mx-auto my-2">home</button></a>
+            <div class="col-sm-3 mx-auto text-center">
+                <a href="{% url 'home' %}"><button class="btn btn-info mx-auto my-2 ">home</button></a>
             </div>
         </div>
+        <!--
         <div class="row">
-            <div class="col-sm-6 mx-auto text-right text-white ">
+            <div class="col-sm-6 mx-auto text-right text-dark ">
                 <a href="https://www.pexels.com/pt-br/licenca/" target="_blanck">Background vector created by pexels-www.pexels.com </a>
             </div>
         </div>
+        -->
     </div>    
 
 {% endblock %}

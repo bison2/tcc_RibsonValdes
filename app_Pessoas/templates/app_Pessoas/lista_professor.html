@@ -4,7 +4,7 @@
     <!--
     <link rel='stylesheet' href='{% static "css/main.css" %}'>
     -->
-    
+    <!--
     <style>
     #backprof {
     background-image: url('{% static "img/professores.jpg" %}');
@@ -15,19 +15,28 @@
     }
     </style>
 
+    -->
+    <style>
+        #backprof {
+            background-color:rgb(210, 248, 248);
 
+        }
+        .btcolor {
+            background-color:#ffff99
+        }
+    </style>
 {% endblock base_head %}
 
 {% block content %}
-    <div id="backprof" class="container">
+    <div id="backprof" class="container border border-dark">
 
         <div class="row">
-            <div class="col-sm-10 mx-auto py-1 text-center text-white ">
-                <h4 class=" bg-primary ">Professores</h4>    
+            <div class="col-sm-10 mx-auto py-1 text-center text-dark ">
+                <h4 class=" btcolor ">Professores</h4>    
             </div>
 
             <div class="col-sm-10 mx-auto text-center">
-                <table class="bg-warning table table-responsive table-hover  table-sm">
+                <table class="btcolor table table-responsive table-hover  table-sm">
                     <thead>
                         <tr>
                             <th scope="col">Id</th>
@@ -45,10 +54,10 @@
                             <td> {{prof.nome}}</td>
                            
                             <td >
-                                <a href="{% url 'pessoa_disc:detalhe' id=prof.id %}"><button class="btn btn-primary mx-auto"><i class="far fa-eye"></i>   detalhe url</button></a>
+                                <a href="{% url 'pessoa_disc:detalhe' id=prof.id %}"><button class="btn btn-info mx-auto"><i class="far fa-eye"></i>   detalhe url</button></a>
                             </td>
                             <td > 
-                                <a href="{% url 'pessoa_disc:detalheprofessor' id=prof.id %}"><button class="btn btn-primary mx-auto"><i class="far fa-eye"></i>    detalhe NOVO</button></a>
+                                <a href="{% url 'pessoa_disc:detalheprofessor' id=prof.id %}"><button class="btn btn-info mx-auto"><i class="far fa-eye"></i>    detalhe NOVO</button></a>
                             </td>
                         </tr>
                         {% endfor %}
@@ -62,15 +71,15 @@
         <div class="row mx-auto ">
 
             <div class="col-sm-10 mx-auto py-2 text-center ">
-                <h5 class=" bg-primary text-white ">Relacionamento manytomany </br> professores e disciplinas</h5>    
+                <h5 class=" btcolor text-dark ">Relacionamento  </br> professores e disciplinas</h5>    
             </div>
             {% for prof in disc_prof %}
-            <div class="col-sm-4 mx-auto py-2 text-white text-center">
+            <div class="col-sm-4 mx-auto py-2 text-dark text-center">
                
-            <table class="bg-warning table table-hover table-sm border border-primary">
-                <caption>Lista de professores e suas disciplinas</caption>
+            <table class="btcolor table table-hover table-sm border border-primary text-dark">
+                <caption class="text-dark">Lista de professores e suas disciplinas</caption>
                 <thead>
-                <tr class="bg-primary ">
+                <tr class=" ">
                     <th scope="col"> {{prof.nome}} tem o título de {{prof.titulo}} e tem {{ prof.discProf.count }} disciplina a lecionar  </th>
                 </tr>
                 </thead>
@@ -86,14 +95,16 @@
             {% endfor %}
         </div>
         <div class="row">
-            <div class="col-sm-3 mx-auto">
-                <a href="{% url 'pessoa_disc:homedisciplina' %}"><button class="btn btn-primary mx-auto my-2">Disciplinas</button></a>
+            <div class="col-sm-3 mx-auto text-center">
+                <a href="{% url 'pessoa_disc:homedisciplina' %}"><button class="btn btn-info mx-auto my-2">Disciplinas</button></a>
             </div>
         </div>
+        <!--
         <div class="row">
             <div class="col-sm-6 mx-auto text-right text-white ">
                 <a href="https://www.pexels.com/pt-br/licenca/" target="_blanck">Background vector created by pexels-www.pexels.com </a>
             </div>
         </div>
+        -->
     </div>    
 {% endblock %}

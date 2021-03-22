@@ -8,20 +8,31 @@
 {% block base_head %}
     <!--
     <link rel='stylesheet' href='{% static "css/main.css" %}'>
-    -->
+
     
     <style>
     #backimg {
-    background-image: url('{% static "img/online-courses.jpg" %}');
-    background-repeat:repeat;
-    background-attachment: fixed;
-    background-size: 200px 200px;
+    background-image: url('{% static "img/abstract.jpg" %}');
+    background-repeat:no-repeat;
+    background-attachment: scroll;
+    background-size:cover;
     background-position:right top;
     
     }
+    
     </style>
+        -->
+    
+    <style>
+        #backimg {
+            background-color:rgb(210, 248, 248);
 
-
+        }
+        .btcolor {
+            background-color:#ffff99
+        }
+    </style>
+    
 {% endblock base_head %}
 
 {% block content %}
@@ -30,11 +41,11 @@
     
 
     
-    <div id="backimg" class="container">
+    <div id="backimg" class="container border border-dark">
         <div  class="row mb-1">
         
         
-            <div class='col-sm-10 px-2 mx-auto border border-primary rounded my-1 py-1  text-justify bg-warning'>
+            <div class='col-sm-10 px-2 mx-auto border border-primary rounded my-1 py-1  text-justify btcolor'>
                 
                 <h3>{{ title }}</h3>
                 <h4>{{ content }} </h4>
@@ -50,25 +61,35 @@
                   
                 <figure class="figure">
                     <a href="{% url 'pessoa_disc:homeprofessor' %}">
-                        <img src="{% static 'img/professores.jpg' %}" style="width:100px; height:100px;" class="figure-img img-fluid rounded-circle " alt="Imagem de um quadrado genérico com bordas arredondadas, em uma figure.">
+                        <span style="font-size: 4em; color: rgb(8, 8, 0);">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </span>
+                        <!--
+                        <img src="{% static 'img/learning.jpg' %}" style="width:100px; height:100px;" class="figure-img img-fluid rounded-circle " alt="Imagem de um quadrado genérico com bordas arredondadas, em uma figure.">
+                        -->
                     </a>
-                    <figcaption class="figure-caption">Relação de Professores</figcaption>
+                    <figcaption class="figure-caption text-dark">Relação de Professores</figcaption>
                 </figure>
                 
                 </br>
                     
-                    <a href="{% url 'pessoa_disc:homeprofessor' %}"><button class="btn btn-warning mx-auto my-1"><i class="fas fa-chalkboard-teacher"></i>   Professores</button></a>
+                    <a href="{% url 'pessoa_disc:homeprofessor' %}"> <button class="btn  mx-auto my-1 btcolor "> <i class="fas fa-chalkboard-teacher"></i>   Professores</button></a>
             </div> 
                     
             <div class='col-sm-3 mr-1 px-2 m-auto border border-info rounded my-1 py-1 text-primary text-center'>
                 <figure class="figure">
                     <a href="{% url 'pessoa_disc:homedisciplina' %}">
-                        <img src="{% static 'img/disciplinas.jpg' %}" style="width:100px; height:100px;" class="figure-img img-fluid rounded-circle " alt="Imagem de um quadrado genérico com bordas arredondadas, em uma figure.">
+                        <span style="font-size: 4em; color: rgb(5, 5, 0);">
+                            <i class="fas fa-book"></i>
+                        </span>    
+                        <!--
+                        <img src="{% static 'img/online-courses.jpg' %}" style="width:100px; height:100px;" class="figure-img img-fluid rounded-circle " alt="Imagem de um quadrado genérico com bordas arredondadas, em uma figure.">
+                        -->
                     </a>
-                    <figcaption class="figure-caption">Relação de Disciplinas</figcaption>
+                    <figcaption class="figure-caption text-dark">Relação de Disciplinas</figcaption>
                 </figure>
                 </br>
-                    <a href="{% url 'pessoa_disc:homedisciplina' %}"><button class="btn btn-warning mx-auto my-1"><i class="fas fa-book"></i>   Disciplinas</button></a>
+                    <a href="{% url 'pessoa_disc:homedisciplina' %}"><button class="btn btcolor mx-auto my-1"><i class="fas fa-book"></i>   Disciplinas</button></a>
             </div>   
               
 
@@ -76,23 +97,33 @@
             <div class='col-sm-3 mr-1 px-2 m-auto border border-info rounded my-1 py-1 text-primary text-center'>
                 <figure class="figure">
                     <a href="{% url 'pessoa_disc:homealuno' %}">
-                        <img src="{% static 'img/alunos.jpg' %}" style="width:100px; height:100px;" class="figure-img img-fluid rounded-circle border border-primary " alt="Imagem de um quadrado genérico com bordas arredondadas, em uma figure.">
+                        <span style="font-size: 4em; color: rgb(7, 7, 0);">
+                            <i class="fas fa-book-reader"></i>
+                        </span>
+                        <!--
+                        <img src="{% static 'img/online-education_img.jpg' %}" style="width:100px; height:100px;" class="figure-img img-fluid rounded-circle border border-primary " alt="Imagem de um quadrado genérico com bordas arredondadas, em uma figure.">
+                        -->
                     </a>
-                    <figcaption class="figure-caption">Relação de Alunos</figcaption>
+                    <figcaption class="figure-caption text-dark">Relação de Alunos</figcaption>
                 </figure>
                 </br>
-                    <a href="{% url 'pessoa_disc:homealuno' %}"><button class="btn btn-warning mx-auto my-1"><i class="fas fa-book-reader"></i>   Alunos</button></a>
+                    <a href="{% url 'pessoa_disc:homealuno' %}"><button class="btn btcolor mx-auto my-1"><i class="fas fa-book-reader"></i>   Alunos</button></a>
             </div> 
                     
             <div class='col-sm-3 mr-1 px-2 m-auto border border-info rounded my-1 py-1 text-primary text-center '>
                 <figure class="figure">
                     <a href="{% url 'questions:question' %}">
-                        <img src="{% static 'img/questoes.jpg' %}" style="width:100px; height:100px;" class="figure-img img-fluid rounded-circle" alt="Imagem de um quadrado genérico com bordas arredondadas, em uma figure.">
+                        <span style="font-size: 4em; color: rgb(5, 5, 0);">
+                        <i class="fas fa-square-root-alt"></i>
+                        </span>
+                        <!--
+                        <img src="{% static 'img/abstract.jpg' %}" style="width:100px; height:100px;" class="figure-img img-fluid rounded-circle" alt="Imagem de um quadrado genérico com bordas arredondadas, em uma figure.">
+                        -->
                     </a>
-                    <figcaption class="figure-caption">Relação de Questões</figcaption>
+                    <figcaption class="figure-caption text-dark">Relação de Questões</figcaption>
                 </figure>
                 </br>
-                    <a href="{% url 'questions:question' %}"><button class="btn btn-warning mx-auto my-1"><i class="fas fa-square-root-alt"></i>   Questões</button></a>
+                    <a href="{% url 'questions:question' %}"><button class="btn btcolor mx-auto my-1"><i class="fas fa-square-root-alt"></i>   Questões</button></a>
             </div>   
         </div>
     
@@ -108,9 +139,9 @@
                         -->
                         <figure class="figure">
                             <a href="{% url 'pessoa_disc:homeprofessor' %}">
-                                <img src="{% static 'img/professores.jpg' %}" style="width:200px; height:200px;" class="figure-img img-fluid rounded-circle " alt="Imagem de um quadrado genérico com bordas arredondadas, em uma figure.">
+                                <img src="{% static 'img/edu_tec.jpg' %}" style="width:200px; height:200px;" class="figure-img img-fluid rounded-circle " alt="Imagem de um quadrado genérico com bordas arredondadas, em uma figure.">
                             </a>
-                            <figcaption class="figure-caption">Relação de Professores</figcaption>
+                            <figcaption class="figure-caption text-dark">Relação de Professores</figcaption>
                         </figure>
                         
                         </br>

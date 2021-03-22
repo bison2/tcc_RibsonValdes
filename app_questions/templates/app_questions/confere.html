@@ -1,53 +1,69 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block base_head %}
+<style>
+    #backresp {
+        background-color:rgb(210, 248, 248);
+
+    }
+    .btcolor {
+        background-color:#ffff99
+    }
+</style>
+{% endblock base_head %}
 
 {% block content %}
-<div class="row  text-primary">
+<div id="backresp" class="container border border-dark ">
+    <div class="row text-dark ">
    
-    <div class="col-sm-9 mx-auto py-2 border border-primary bg-warning" >
-       
-        <h5>{{ title}} </h5>
-        <h6>{{ content }}</h6>
+        <div class="col-sm-7 mx-auto  my-2 py-2 btcolor" >
             
-        
-        <h6> sua resposta foi  {{ resposta }}</h6>
-        <h6> o gabarito é {{ gabarito }}</h6>
-        <h6>a msg é :{{ msg }}</h6>
-        
-        {% if resposta == gabarito %}
-        <span style="font-size: 3em; color:rgba(12, 9, 240, 0.904)">
-            <i class="far fa-grin-beam"></i> </br>
-            <i class="far fa-thumbs-up"></i>
-        </span>
-        {% else %}
-        <span style="font-size: 3em; color:rgba(12, 9, 240, 0.904); background-color: rgb(255, 251, 4);">
-            <i class="far fa-sad-cry"></i>
-            </br>
-            <i class="far fa-thumbs-down"></i>
-        </span>
-        {% endif %}
-
+                <h5>{{ title}} </h5>
+                <h6>{{ content }}</h6>
+                    
+                
+                <h6> sua resposta foi  {{ resposta }}</h6>
+                <h6> o gabarito é {{ gabarito }}</h6>
+                <h6>a msg é :{{ msg }}</h6>
+        </div>        
+        <div class="col-sm-3 text-center mx-auto  my-2 py-2  btcolor" >
+                {% if resposta == gabarito %}
+                <span style="font-size: 3em; color:rgba(0, 0, 12, 0.904)">
+                    <i class="far fa-grin-beam"></i> 
+                    <i class="far fa-thumbs-up"></i>
+                </span>
+                {% else %}
+                <span style="font-size: 3em; color:rgba(1, 0, 12, 0.904);">
+                    <i class="far fa-sad-cry"></i>
+                    
+                    <i class="far fa-thumbs-down"></i>
+                </span>
+                {% endif %}
+               
+        </div>
+    </div>
         <hr>
-
-        <div class="row sm-12 mx-auto py-1">
+    
+    <div class="row sm-12 mx-auto py-1">
             <div class="col-sm-3 mx-auto text-center py-1 text-center"> 
-                <a href="{% url 'questions:question' %}"><button class="btn btn-primary mx-auto my-1">Questões</button></a>
+                <a href="{% url 'questions:question' %}"><button class="btn btn-info mx-auto my-1">Questões</button></a>
             </div>
             <div class="col-sm-3 mx-auto text-center py-1 text-center"> 
-                <a href="{% url 'pessoa_disc:homeprofessor' %}"><button class="btn btn-primary mx-auto my-1">Professores</button></a>
+                <a href="{% url 'pessoa_disc:homeprofessor' %}"><button class="btn btn-info mx-auto my-1">Professores</button></a>
             </div>
             <div class="col-sm-3 mx-auto text-center py-1 text-center"> 
-                <a href="{% url 'pessoa_disc:homedisciplina' %}"><button class="btn btn-primary mx-auto my-1">Disciplinas</button></a>
+                <a href="{% url 'pessoa_disc:homedisciplina' %}"><button class="btn btn-info mx-auto my-1">Disciplinas</button></a>
             </div>    
             <div class="col-sm-3 mx-auto text-center py-1 text-center"> 
-            <a href="{% url 'home' %}"><button class="btn btn-primary mx-auto my-1">Home</button></a>
+            <a href="{% url 'home' %}"><button class="btn btn-info mx-auto my-1">Home</button></a>
             </div>
-        </div>
+    </div>
         <hr>     
         
        
-    </div>
+    
 </div>
 
+</div>
 {% endblock %}
