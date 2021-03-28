@@ -25,8 +25,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY=config('SECRET_KEY')
 
-SECRET_KEY='gbs5*v$wa=dz@a^u=1+kpht^f#nh61o9z3l@5-@2v0_4$@cqs4'
-#SECRET_KEY=os.getenv('SECRET_KEY') 
+
+SECRET_KEY=os.getenv('SECRET_KEY') 
 DEBUG = os.getenv('DEBUG') #(retornar para False no deploy)
 ALLOWED_HOSTS= ['127.0.0.1' 'localhost' 'git.heroku.com/ribson.git']
 # SECURITY WARNING: don't run with debug turned on in production!
