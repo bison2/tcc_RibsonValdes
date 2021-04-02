@@ -2,26 +2,27 @@
 {% load static %}
 
 {% block base_head %}
-    <!--
-    <link rel='stylesheet' href='{% static "css/main.css" %}'>
+    
     
     
     <style>
         #backfooter{
-        background-image: url('{% static "img/edu_tec.jpg" %}');
-        background-repeat:repeat;
-        background-attachment: fixed;
-        background-size: 200px 200px;
+        background-image: url('{% static "img/novoback.jpg" %}');
+        background-repeat:no-repeat;
+        background-attachment:scroll;
+        background-size:cover;
         background-position:right top;
         
         }
         </style>
-    !-->
+   <!--
+    <link rel='stylesheet' href='{% static "css/main.css" %}'>
     <style>
         #backfooter {
             background-color: rgb(210, 248, 248);
         }
     </style>
+     !-->
 {% endblock base_head %}
 
 <div id="backfooter" class="container text-center text-dark border border-dark">
