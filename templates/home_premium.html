@@ -23,28 +23,28 @@
         background-image: url('{% static "img/q_azul.jpg" %}');
         background-repeat:no-repeat;
         background-attachment: scroll;
-        background-size:260px 170px;
+        background-size:360px 170px;
         background-position:right top;
     }
     #c2 {
         background-image: url('{% static "img/qbomdia.jpg" %}');
         background-repeat:repeat;
         background-attachment: scroll;
-        background-size:260px 170px;
+        background-size:360px 170px;
         background-position:right top;
     }
     #c3 {
         background-image: url('{% static "img/q_azul.jpg" %}');
         background-repeat:repeat;
         background-attachment: scroll;
-        background-size:260px 170px;
+        background-size:360px 170px;
         background-position:right top;
     }
     #c4 {
         background-image: url('{% static "img/qbomdia.jpg" %}');
         background-repeat:repeat;
         background-attachment: scroll;
-        background-size:260px 170px;
+        background-size:360px 170px;
         background-position:right top;
     }
     
@@ -74,7 +74,7 @@
         <div  class="row mb-1">
         
         
-            <div class='col-sm-10 btcolor px-2 mx-auto border border-primary rounded my-1 py-1  text-justify '>
+            <div class='col-sm-10 btcolor px-2 mx-auto border border-primary rounded my-3 py-1  text-justify '>
                 
                 <h3>{{ title }}</h3>
                 <h4>{{ content }} </h4>
@@ -85,7 +85,7 @@
         <div class='row '>
             
 
-            <div class='col-sm-3 px-2 border border-info rounded my-1 py-1 text-primary text-center'>
+            <div class='col-sm-6 px-2 border border-info rounded my-1 py-1 text-primary text-center'>
                 
                   
                 <figure class="figure">
@@ -105,7 +105,7 @@
                     <a href="{% url 'pessoa_disc:homeprofessor' %}"> <button class="btn  mx-auto my-1 btcolor "> <i class="fas fa-chalkboard-teacher"></i>   Professores</button></a>
             </div> 
                     
-            <div class='col-sm-3 mr-1 px-2 m-auto border border-info rounded my-1 py-1 text-primary text-center'>
+            <div class='col-sm-6 mr-1 px-2 m-auto border border-info rounded my-1 py-1 text-primary text-center'>
                 <figure class="figure">
                     <a href="{% url 'pessoa_disc:homedisciplina' %}">
                         <span style="font-size: 4em; color: rgb(5, 5, 0);">
@@ -123,7 +123,7 @@
               
 
             
-            <div class='col-sm-3 mr-1 px-2 m-auto border border-info rounded my-1 py-1 text-primary text-center'>
+            <div class='col-sm-6 mr-1 px-2 m-auto border border-info rounded my-1 py-1 text-primary text-center'>
                 <figure class="figure">
                     <a href="{% url 'pessoa_disc:homealuno' %}">
                         <span style="font-size: 4em; color: rgb(7, 7, 0);">
@@ -139,7 +139,7 @@
                     <a href="{% url 'pessoa_disc:homealuno' %}"><button class="btn btcolor mx-auto my-1"><i class="fas fa-book-reader"></i>   Alunos</button></a>
             </div> 
                     
-            <div class='col-sm-3 mr-1 px-2 m-auto border border-info rounded my-1 py-1 text-primary text-center '>
+            <div class='col-sm-6 mr-1 px-2 m-auto border border-info rounded my-1 py-1 text-primary text-center '>
                 <figure class="figure">
                     <a href="{% url 'questions:question' %}">
                         <span style="font-size: 4em; color: rgb(5, 5, 0);">
@@ -159,10 +159,10 @@
     
     
         <div class="row ">
-            <div class="col-3 btcolor mx-auto px-2 border border-info rounded my-1 py-1 text-primary text-center">
+            <div class="col-sm-4 btcolor mx-auto px-2 border border-info rounded my-1 py-1 text-primary text-center">
                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
-                      <div id="c1" class="carousel-item active ">
+                      <div id="c1" class="carousel-item active">
                        <!--
                         <img class="d-block  border border-primary img-fluid rounded-circle" src="{% static 'img/professores.jpg' %}" style="width:100%; height:400px;" alt="Primeiro Slide">
                         -->
@@ -195,7 +195,7 @@
                         <img class="d-block  border rounded-circle border-primary img-fluid" src="{% static 'img/disciplinas.jpg' %}" style="width:200px; height:200px;" alt="Segundo Slide">
                         -->
 
-                        <figure class="figure">
+                        <figure class="figure ">
                             <a href="{% url 'pessoa_disc:homedisciplina' %}">
                                 <span style="font-size: 5em; color: rgb(5, 5, 0);">
                                     <i class="fas fa-book"></i>
@@ -211,7 +211,7 @@
                             <a href="{% url 'pessoa_disc:homedisciplina' %}"><button class="btn btn-light mx-auto my-1"><i class="fas fa-book"></i>   Disciplinas</button></a>
                         -->
                       </div>
-                      <div id="c3" class="carousel-item">
+                      <div id="c3" class="carousel-item ">
                           <!--
                         <img class="d-block  border rounded-circle border-primary img-fluid" src="{% static 'img/alunos.jpg' %}" style="width:200px; height:200px;" alt="Terceiro Slide">
                         -->
@@ -232,11 +232,11 @@
                         -->
 
                       </div>
-                      <div id="c4" class="carousel-item">
+                      <div id="c4" class="carousel-item ">
                           <!--
                         <img class="d-block  border rounded-circle border-primary img-fluid" src="{% static 'img/questoes.jpg' %}" style="width:200px; height:2ss00px;" alt="Quarto Slide">
                             -->
-                            <figure class="figure">
+                            <figure class="figure ">
                                 <a href="{% url 'questions:question' %}">
                                     <span style="font-size: 5em; color: rgb(5, 5, 0);">
                                         <i class="fas fa-square-root-alt"></i>
