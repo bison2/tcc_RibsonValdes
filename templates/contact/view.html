@@ -8,16 +8,16 @@
 </div>
 <div class='container'>
     <div class='row'>
-        <div class='col-sm-8 mx-auto my-1 bg-primary text-whithe'>
+        <div class='col-sm-8 mx-auto my-3 text-dark' style="background-color: rgb(210, 248, 248);">
             <p>{{ content }}</p>
             <div class='col-sm-8 mr-auto'>
             <form method='POST'>
                 {% csrf_token %}
                 {{form}}
-                <button type='submit' class='btn btn-success'>Enviar</button>
+                <button type='submit' class='btn btn-success my-2'>Enviar</button>
             </form>
             </div>
-            <a href="{% url 'home' %}"><button class="btn btn-primary">Home</button></a>
+            
         </div>
     </div>
 </div>

@@ -51,7 +51,7 @@ class DisciplinaManager(models.Manager):
 
 class Pessoa(models.Model):
     nome = models.CharField(max_length = 100)
-    cpf = models.CharField(max_length=11, null=True, blank=True)
+    #cpf = models.CharField(max_length=11, null=True, blank=True)
     email = models.EmailField(max_length=30, null=True, blank=True)
     
     objects = PessoaManager()

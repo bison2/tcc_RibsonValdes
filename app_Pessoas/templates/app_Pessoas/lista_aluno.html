@@ -37,8 +37,8 @@
             </div>
 
             <div class="col-sm-10 mx-auto py-2 text-center">
-                <table class="btcolor table table-responsive table-hover table-sm">
-                    <thead>
+                <table class="btcolor table table-responsive table-hover table-sm" >
+                    <thead style="background-color: rgb(210, 248, 248);"> 
                         <tr class=" text-padrao">
                             
                             <th>Alunos</th>
@@ -55,10 +55,10 @@
                             <td> {{aluno.nome}}</td>
                             
                             <td >
-                                <a href="{% url 'pessoa_disc:detalhe' id=aluno.id %}"><button class="btn btn-info mx-auto"><i class="far fa-eye"></i>detalhe url</button></a>
+                                <a href="{% url 'pessoa_disc:detalhe' id=aluno.id %}"><button class="btn mx-auto" style="background-color: rgb(210, 248, 248);"><i class="far fa-eye"></i>detalhe url</button></a>
                             </td>
                             <td > 
-                                <a href="{% url 'pessoa_disc:detalhealuno' id=aluno.id %}"><button class="btn btn-info mx-auto"><i class="far fa-eye"></i> detalhe NOVO</button></a>
+                                <a href="{% url 'pessoa_disc:detalhealuno' id=aluno.id %}"><button class="btn mx-auto" style="background-color: rgb(210, 248, 248);"><i class="far fa-eye"></i> detalhe NOVO</button></a>
                             </td>
                         </tr>
                         {% endfor %}
@@ -82,7 +82,7 @@
                      
                 <table class="btcolor table table-hover table-sm">
                     <caption class="text-dark">Lista de alunos e suas disciplinas</caption>
-                    <thead>
+                    <thead style="background-color: rgb(210, 248, 248);">
                         <tr class="btcolor text-dark">
                             <th scope="col"> {{aluno.nome}} estuda {{aluno.discAluno.count}} disciplinas</th>
                         </tr>

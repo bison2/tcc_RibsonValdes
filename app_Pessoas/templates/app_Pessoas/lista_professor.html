@@ -38,8 +38,8 @@
             </div>
 
             <div class="col-sm-10 mx-auto text-center">
-                <table class="btcolor table table-responsive table-hover  table-sm">
-                    <thead>
+                <table class="btcolor table table-responsive table-hover  table-sm" >
+                    <thead style="background-color: rgb(210, 248, 248);">
                         <tr>
                             <th scope="col">Id</th>
                             <th scope="col">Professores</th>
@@ -56,10 +56,10 @@
                             <td> {{prof.nome}}</td>
                            
                             <td >
-                                <a href="{% url 'pessoa_disc:detalhe' id=prof.id %}"><button class="btn btn-info mx-auto"><i class="far fa-eye"></i>   detalhe url</button></a>
+                                <a href="{% url 'pessoa_disc:detalhe' id=prof.id %}"><button class="btn mx-auto border border-primary" style="background-color: rgb(210, 248, 248);"><i class="far fa-eye"></i> detalhe url</button></a>
                             </td>
                             <td > 
-                                <a href="{% url 'pessoa_disc:detalheprofessor' id=prof.id %}"><button class="btn btn-info mx-auto"><i class="far fa-eye"></i>    detalhe NOVO</button></a>
+                                <a href="{% url 'pessoa_disc:detalheprofessor' id=prof.id %}"><button class="btn mx-auto border border-primary " style="background-color: rgb(210, 248, 248);"><i class="far fa-eye"></i> detalhe NOVO</button></a>
                             </td>
                         </tr>
                         {% endfor %}
@@ -80,7 +80,7 @@
                
             <table class="btcolor table table-hover table-sm border border-primary text-dark">
                 <caption class="text-dark">Lista de professores e suas disciplinas</caption>
-                <thead>
+                <thead style="background-color: rgb(210, 248, 248);">
                 <tr class=" ">
                     <th scope="col"> {{prof.nome}} tem o título de {{prof.titulo}} e tem {{ prof.discProf.count }} disciplina a lecionar  </th>
                 </tr>

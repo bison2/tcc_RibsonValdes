@@ -23,7 +23,7 @@
 
 {% block content %} 
 
-<div id="backlogin" class='container'>
+<div class='container'>
 
 
     <div class='row'>
@@ -34,15 +34,15 @@
             </div>
 
             
-            <div class='col-sm-8 bg-primary mx-auto'>
+            <div class='col-sm-8 mx-auto my-3' style="background-color: rgb(210, 248, 248);">
             <form method='POST'>
                 {% csrf_token %}
                 {{form}}
-                <button type='submit' class='btn btn-success '>Enviar</button>
+                <button type='submit' class='btn btn-success my-2 '>Enviar</button>
             </form>
             </div>
-            <div class="col-sm-6 text-center text-white mx-auto mb-1">
-                <a href="<a href="http://tpack.org">   " target="_blanck">Background vector created by tpack.org - www.tpack.org">   </div>
+            
+               
         </div>
     </div>
     
