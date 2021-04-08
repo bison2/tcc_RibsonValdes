@@ -22,7 +22,7 @@ def premium_page(request):
     context = {
                     "title": "Trabalho de conclusão de curso",
                     "content": "Estudo dos princípios do Design-Based Research -DBR e do Technologycal Pedagogical Content Knowledge- TPACK e Desenvolvimento de Sistema Web de Gestão Acadêmica ",
-                    "contentdois":"Ribson Coelho Cardoch Valdés. IFB-TSI-2021."
+                    "contentdois":"Ribson Coelho Cardoch Valdés. IFB-TSI-2021. Orientadora Me. Cristiane Jorge de Lima Bonfim- IFB/CBRA."
               }
     
     return render(request, "home_premium.html", context)
